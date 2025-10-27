@@ -1,0 +1,182 @@
+﻿<Window x:Class="ClinicManagementSystem.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="تسجيل الدخول - نظام إدارة العيادة" 
+        Height="500" 
+        Width="400"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border Background="White" 
+            CornerRadius="20"
+            BorderBrush="#2196F3"
+            BorderThickness="2">
+        <Border.Effect>
+            <DropShadowEffect Color="#000000" BlurRadius="20" ShadowDepth="5" Opacity="0.3"/>
+        </Border.Effect>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Border Grid.Row="0" 
+                    Background="#2196F3"
+                    CornerRadius="20,20,0,0"
+                    Padding="20">
+                <StackPanel>
+                    <TextBlock Text="🏥" 
+                              FontSize="48"
+                              HorizontalAlignment="Center"
+                              Margin="0,10,0,0"/>
+                    <TextBlock Text="نظام إدارة العيادة" 
+                              FontSize="24" 
+                              FontWeight="Bold" 
+                              Foreground="White"
+                              HorizontalAlignment="Center"
+                              Margin="0,10,0,0"/>
+                    <TextBlock Text="تسجيل الدخول" 
+                              FontSize="14" 
+                              Foreground="#E3F2FD"
+                              HorizontalAlignment="Center"
+                              Margin="0,5,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Content -->
+            <StackPanel Grid.Row="1" 
+                       Margin="40,30">
+
+                <!-- Username -->
+                <TextBlock Text="اسم المستخدم" 
+                          FontSize="14" 
+                          Foreground="#555"
+                          Margin="0,0,0,8"/>
+                <Border Background="#F5F5F5"
+                       BorderBrush="#BDBDBD"
+                       BorderThickness="1"
+                       CornerRadius="8"
+                       Margin="0,0,0,20">
+                    <Grid>
+                        <TextBlock Text="👤" 
+                                  FontSize="16"
+                                  VerticalAlignment="Center"
+                                  Margin="10,0"
+                                  Foreground="#999"/>
+                        <TextBox x:Name="txtUsername"
+                                FontSize="14"
+                                Padding="35,10,10,10"
+                                BorderThickness="0"
+                                Background="Transparent"
+                                VerticalContentAlignment="Center"/>
+                    </Grid>
+                </Border>
+
+                <!-- Password -->
+                <TextBlock Text="كلمة المرور" 
+                          FontSize="14" 
+                          Foreground="#555"
+                          Margin="0,0,0,8"/>
+                <Border Background="#F5F5F5"
+                       BorderBrush="#BDBDBD"
+                       BorderThickness="1"
+                       CornerRadius="8"
+                       Margin="0,0,0,10">
+                    <Grid>
+                        <TextBlock Text="🔒" 
+                                  FontSize="16"
+                                  VerticalAlignment="Center"
+                                  Margin="10,0"
+                                  Foreground="#999"/>
+                        <PasswordBox x:Name="txtPassword"
+                                    FontSize="14"
+                                    Padding="35,10,10,10"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                    VerticalContentAlignment="Center"
+                                    KeyDown="txtPassword_KeyDown"/>
+                    </Grid>
+                </Border>
+
+                <!-- Remember Me -->
+                <CheckBox x:Name="chkRememberMe"
+                         Content="تذكرني"
+                         FontSize="13"
+                         Margin="0,10,0,20"
+                         Foreground="#666"/>
+
+                <!-- Login Button -->
+                <Button x:Name="btnLogin"
+                       Content="تسجيل الدخول"
+                       Background="#2196F3"
+                       Foreground="White"
+                       BorderThickness="0"
+                       Padding="0,15"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Cursor="Hand"
+                       Click="Login_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}"
+                                               CornerRadius="8">
+                                            <ContentPresenter HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#1976D2"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <!-- Error Message -->
+                <TextBlock x:Name="txtError"
+                          Text=""
+                          Foreground="Red"
+                          FontSize="12"
+                          TextAlignment="Center"
+                          Margin="0,15,0,0"
+                          TextWrapping="Wrap"
+                          Visibility="Collapsed"/>
+            </StackPanel>
+
+            <!-- Footer -->
+            <Border Grid.Row="2"
+                   Background="#F5F5F5"
+                   CornerRadius="0,0,20,20"
+                   Padding="20,15">
+                <StackPanel>
+                    <TextBlock Text="نسخة تجريبية 1.0" 
+                              FontSize="11"
+                              Foreground="#999"
+                              HorizontalAlignment="Center"/>
+                    <Button Content="✖ إغلاق"
+                           Background="Transparent"
+                           Foreground="#999"
+                           BorderThickness="0"
+                           FontSize="11"
+                           Cursor="Hand"
+                           HorizontalAlignment="Center"
+                           Margin="0,5,0,0"
+                           Click="Close_Click"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Border>
+</Window>

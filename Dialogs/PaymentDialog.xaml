@@ -1,0 +1,109 @@
+﻿<Window x:Class="ClinicManagementSystem.Dialogs.PaymentDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="إضافة دفعة" 
+        Height="500" Width="500"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft"
+        ResizeMode="NoResize">
+
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#4CAF50" Padding="20">
+            <StackPanel>
+                <TextBlock Text="💰 إضافة دفعة" FontSize="22" FontWeight="Bold" Foreground="White"/>
+                <TextBlock x:Name="txtInvoiceNumber" Text="رقم الفاتورة: INV-001" FontSize="14" 
+                           Foreground="#E8F5E9" Margin="0,5,0,0"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Content -->
+        <StackPanel Grid.Row="1" Margin="30">
+            <!-- Invoice Summary -->
+            <Border Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,20">
+                <StackPanel>
+                    <TextBlock Text="ملخص الفاتورة" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,0,0,15"/>
+
+                    <Grid Margin="0,5">
+                        <TextBlock Text="صافي الفاتورة:" FontSize="14"/>
+                        <TextBlock x:Name="txtNetAmount" Text="0.00 جنيه" FontSize="14" FontWeight="Bold" 
+                                   Foreground="#2196F3" HorizontalAlignment="Left"/>
+                    </Grid>
+
+                    <Grid Margin="0,5">
+                        <TextBlock Text="المدفوع سابقاً:" FontSize="14"/>
+                        <TextBlock x:Name="txtPreviouslyPaid" Text="0.00 جنيه" FontSize="14" 
+                                   Foreground="#4CAF50" HorizontalAlignment="Left"/>
+                    </Grid>
+
+                    <Separator Margin="0,10"/>
+
+                    <Grid Margin="0,5">
+                        <TextBlock Text="المتبقي:" FontSize="16" FontWeight="Bold"/>
+                        <TextBlock x:Name="txtRemainingAmount" Text="0.00 جنيه" FontSize="18" FontWeight="Bold" 
+                                   Foreground="#F44336" HorizontalAlignment="Left"/>
+                    </Grid>
+                </StackPanel>
+            </Border>
+
+            <!-- Payment Details -->
+            <Border Background="White" CornerRadius="10" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="تفاصيل الدفعة" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,0,0,15"/>
+
+                    <!-- Amount -->
+                    <TextBlock Text="المبلغ المدفوع *" FontSize="14" Foreground="#555" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtAmount" FontSize="16" Padding="12" Margin="0,0,0,15" 
+                             TextChanged="Amount_TextChanged"/>
+
+                    <!-- Quick Amount Buttons -->
+                    <WrapPanel Margin="0,0,0,15">
+                        <Button Content="25%" Background="#E0E0E0" Padding="10,5" Margin="0,0,5,5" 
+                                Click="QuickAmount_Click" Tag="25"/>
+                        <Button Content="50%" Background="#E0E0E0" Padding="10,5" Margin="0,0,5,5" 
+                                Click="QuickAmount_Click" Tag="50"/>
+                        <Button Content="75%" Background="#E0E0E0" Padding="10,5" Margin="0,0,5,5" 
+                                Click="QuickAmount_Click" Tag="75"/>
+                        <Button Content="كامل" Background="#4CAF50" Foreground="White" Padding="10,5" Margin="0,0,5,5" 
+                                Click="QuickAmount_Click" Tag="100"/>
+                    </WrapPanel>
+
+                    <!-- Payment Method -->
+                    <TextBlock Text="طريقة الدفع *" FontSize="14" Foreground="#555" Margin="0,0,0,5"/>
+                    <ComboBox x:Name="cmbPaymentMethod" FontSize="14" Padding="10" Margin="0,0,0,15">
+                        <ComboBoxItem Content="كاش" IsSelected="True"/>
+                        <ComboBoxItem Content="فيزا"/>
+                        <ComboBoxItem Content="تحويل بنكي"/>
+                        <ComboBoxItem Content="أخرى"/>
+                    </ComboBox>
+
+                    <!-- Reference (for bank transfer) -->
+                    <TextBlock Text="رقم المرجع (للتحويلات البنكية)" FontSize="14" Foreground="#555" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtReference" FontSize="14" Padding="10" Margin="0,0,0,15"/>
+
+                    <!-- Notes -->
+                    <TextBlock Text="ملاحظات" FontSize="14" Foreground="#555" Margin="0,0,0,5"/>
+                    <TextBox x:Name="txtNotes" Height="60" TextWrapping="Wrap" AcceptsReturn="True" 
+                             VerticalScrollBarVisibility="Auto" Padding="10"/>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+
+        <!-- Footer -->
+        <Border Grid.Row="2" Background="White" BorderBrush="#E0E0E0" BorderThickness="0,1,0,0" Padding="20">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="✅ تأكيد الدفعة" Background="#4CAF50" Foreground="White" BorderThickness="0"
+                        Padding="30,12" FontSize="16" FontWeight="Bold" Margin="10,0" Cursor="Hand" Click="Confirm_Click"/>
+
+                <Button Content="❌ إلغاء" Background="#F44336" Foreground="White" BorderThickness="0"
+                        Padding="30,12" FontSize="16" FontWeight="Bold" Margin="10,0" Cursor="Hand" Click="Cancel_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

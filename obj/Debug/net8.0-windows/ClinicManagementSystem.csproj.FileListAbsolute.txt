@@ -1,0 +1,36 @@
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.csproj.AssemblyReference.cache
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\InvoiceDialog.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\PatientDialog.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\PaymentDialog.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\VisitDialog.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Main\LoginWindow .baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Main\MainWindow.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\AppointmentsPage.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\DashboardPage.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\InventoryPage.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\InvoicesPage.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\PatientsPage.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\QueuePage.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\ReportsPage.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\SettingsPage.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\InvoiceDialog.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\PatientDialog.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\PaymentDialog.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\VisitDialog.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Main\LoginWindow .g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Main\MainWindow.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\AppointmentsPage.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\DashboardPage.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\InventoryPage.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\InvoicesPage.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\PatientsPage.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\QueuePage.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\ReportsPage.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\SettingsPage.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem_MarkupCompile.cache
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.g.resources
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.AssemblyInfoInputs.cache
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.AssemblyInfo.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.csproj.CoreCompileInputs.cache

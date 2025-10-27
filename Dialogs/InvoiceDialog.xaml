@@ -1,0 +1,194 @@
+﻿<Window x:Class="ClinicManagementSystem.Dialogs.InvoiceDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="إنشاء فاتورة جديدة" 
+        Height="700" Width="900"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft"
+        ResizeMode="NoResize">
+
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#4CAF50" Padding="20">
+            <TextBlock Text="💰 إنشاء فاتورة جديدة" FontSize="22" FontWeight="Bold" Foreground="White"/>
+        </Border>
+
+        <!-- Content -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="20">
+            <StackPanel>
+                <!-- Patient Selection -->
+                <Border Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="👤 بيانات المريض" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,0,0,15"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+
+                            <ComboBox x:Name="cmbPatient" Grid.Column="0" FontSize="14" Padding="10" 
+                                      DisplayMemberPath="FullName" SelectedValuePath="PatientID"/>
+
+                            <Button Grid.Column="1" Content="🔍 بحث" Background="#2196F3" Foreground="White"
+                                    BorderThickness="0" Padding="15,10" Margin="10,0,0,0" Click="SearchPatient_Click"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Invoice Type & Date -->
+                <Border Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,15">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                            <TextBlock Text="نوع الفاتورة *" FontSize="14" Foreground="#555" Margin="0,0,0,5"/>
+                            <ComboBox x:Name="cmbInvoiceType" FontSize="14" Padding="10">
+                                <ComboBoxItem Content="كشف" IsSelected="True"/>
+                                <ComboBoxItem Content="عملية"/>
+                                <ComboBoxItem Content="أشعة"/>
+                                <ComboBoxItem Content="تحاليل"/>
+                                <ComboBoxItem Content="أدوية"/>
+                                <ComboBoxItem Content="أخرى"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                            <TextBlock Text="تاريخ الفاتورة *" FontSize="14" Foreground="#555" Margin="0,0,0,5"/>
+                            <DatePicker x:Name="dpInvoiceDate" FontSize="14" Padding="10" SelectedDate=""/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- Invoice Items -->
+                <Border Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,15">
+                    <StackPanel>
+                        <Grid Margin="0,0,0,15">
+                            <TextBlock Text="📋 بنود الفاتورة" FontSize="16" FontWeight="Bold" Foreground="#333" HorizontalAlignment="Right"/>
+                            <Button Content="➕ إضافة بند" Background="#4CAF50" Foreground="White" BorderThickness="0"
+                                    Padding="10,5" HorizontalAlignment="Left" Click="AddItem_Click"/>
+                        </Grid>
+
+                        <!-- Items Grid -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="60"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock Grid.Column="0" Text="الوصف" FontWeight="Bold" Margin="5"/>
+                            <TextBlock Grid.Column="1" Text="الكمية" FontWeight="Bold" Margin="5"/>
+                            <TextBlock Grid.Column="2" Text="السعر" FontWeight="Bold" Margin="5"/>
+                            <TextBlock Grid.Column="3" Text="الإجمالي" FontWeight="Bold" Margin="5"/>
+                            <TextBlock Grid.Column="4" Text="" FontWeight="Bold" Margin="5"/>
+                        </Grid>
+
+                        <ScrollViewer MaxHeight="200" VerticalScrollBarVisibility="Auto">
+                            <StackPanel x:Name="pnlInvoiceItems"/>
+                        </ScrollViewer>
+                    </StackPanel>
+                </Border>
+
+                <!-- Totals & Discount -->
+                <Border Background="White" CornerRadius="10" Padding="20">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Notes -->
+                        <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                            <TextBlock Text="📝 ملاحظات" FontSize="14" FontWeight="Bold" Foreground="#333" Margin="0,0,0,10"/>
+                            <TextBox x:Name="txtNotes" Height="100" TextWrapping="Wrap" AcceptsReturn="True" 
+                                     VerticalScrollBarVisibility="Auto" Padding="10"/>
+                        </StackPanel>
+
+                        <!-- Calculations -->
+                        <StackPanel Grid.Column="1">
+                            <Grid Margin="0,5">
+                                <TextBlock Text="الإجمالي:" FontSize="14" HorizontalAlignment="Right"/>
+                                <TextBlock x:Name="txtTotal" Text="0.00 جنيه" FontSize="14" FontWeight="Bold" 
+                                           Foreground="#2196F3" HorizontalAlignment="Left"/>
+                            </Grid>
+
+                            <Separator Margin="0,10"/>
+
+                            <Grid Margin="0,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" Text="الخصم:" FontSize="14" VerticalAlignment="Center" Margin="0,0,10,0"/>
+
+                                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                    <TextBox x:Name="txtDiscountAmount" Width="80" Padding="5" TextChanged="DiscountAmount_TextChanged"/>
+                                    <TextBlock Text="جنيه" VerticalAlignment="Center" Margin="5,0"/>
+                                    <TextBlock Text="أو" VerticalAlignment="Center" Margin="10,0"/>
+                                    <TextBox x:Name="txtDiscountPercent" Width="60" Padding="5" TextChanged="DiscountPercent_TextChanged"/>
+                                    <TextBlock Text="%" VerticalAlignment="Center" Margin="5,0"/>
+                                </StackPanel>
+                            </Grid>
+
+                            <Separator Margin="0,10"/>
+
+                            <Grid Margin="0,5">
+                                <TextBlock Text="الصافي:" FontSize="16" FontWeight="Bold" HorizontalAlignment="Right"/>
+                                <TextBlock x:Name="txtNetAmount" Text="0.00 جنيه" FontSize="18" FontWeight="Bold" 
+                                           Foreground="#4CAF50" HorizontalAlignment="Left"/>
+                            </Grid>
+
+                            <Separator Margin="0,10"/>
+
+                            <Grid Margin="0,5">
+                                <TextBlock Text="المدفوع الآن:" FontSize="14" HorizontalAlignment="Right"/>
+                                <TextBox x:Name="txtPaidAmount" Width="150" Padding="5" HorizontalAlignment="Left" 
+                                         TextChanged="PaidAmount_TextChanged"/>
+                            </Grid>
+
+                            <Grid Margin="0,10">
+                                <TextBlock Text="المتبقي:" FontSize="14" FontWeight="Bold" Foreground="#F44336" HorizontalAlignment="Right"/>
+                                <TextBlock x:Name="txtRemainingAmount" Text="0.00 جنيه" FontSize="14" FontWeight="Bold" 
+                                           Foreground="#F44336" HorizontalAlignment="Left"/>
+                            </Grid>
+
+                            <ComboBox x:Name="cmbPaymentMethod" Margin="0,10,0,0" Padding="10">
+                                <ComboBoxItem Content="كاش" IsSelected="True"/>
+                                <ComboBoxItem Content="فيزا"/>
+                                <ComboBoxItem Content="تحويل بنكي"/>
+                                <ComboBoxItem Content="أخرى"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Footer -->
+        <Border Grid.Row="2" Background="White" BorderBrush="#E0E0E0" BorderThickness="0,1,0,0" Padding="20">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="✅ حفظ وطباعة" Background="#4CAF50" Foreground="White" BorderThickness="0"
+                        Padding="30,12" FontSize="16" FontWeight="Bold" Margin="10,0" Cursor="Hand" Click="SaveAndPrint_Click"/>
+
+                <Button Content="💾 حفظ فقط" Background="#2196F3" Foreground="White" BorderThickness="0"
+                        Padding="30,12" FontSize="16" FontWeight="Bold" Margin="10,0" Cursor="Hand" Click="Save_Click"/>
+
+                <Button Content="❌ إلغاء" Background="#F44336" Foreground="White" BorderThickness="0"
+                        Padding="30,12" FontSize="16" FontWeight="Bold" Margin="10,0" Cursor="Hand" Click="Cancel_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,20 @@
+﻿ClinicManagementSystem
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net6.0-windows\
+ClinicManagementSystem
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\App.xaml
+5-373318173
+
+31-1659277970
+210-1952008047
+Dialogs\PatientDialog.xaml;Main\LoginWindow .xaml;Main\MainWindow.xaml;Pages\DashboardPage.xaml;Pages\PatientsPage.xaml;
+
+False
+

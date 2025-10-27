@@ -1,0 +1,328 @@
+﻿<Window x:Class="ClinicManagementSystem.Dialogs.PatientDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="بيانات المريض" 
+        Height="700" 
+        Width="900"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft"
+        ResizeMode="NoResize">
+
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" 
+                Background="#2196F3"
+                Padding="20">
+            <TextBlock x:Name="txtTitle" 
+                      Text="➕ إضافة مريض جديد" 
+                      FontSize="22" 
+                      FontWeight="Bold"
+                      Foreground="White"/>
+        </Border>
+
+        <!-- Content -->
+        <ScrollViewer Grid.Row="1" 
+                     VerticalScrollBarVisibility="Auto"
+                     Margin="20">
+            <StackPanel>
+                <!-- Personal Information -->
+                <Border Background="White"
+                       CornerRadius="10"
+                       Padding="20"
+                       Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="📋 البيانات الشخصية" 
+                                  FontSize="18" 
+                                  FontWeight="Bold"
+                                  Foreground="#333"
+                                  Margin="0,0,0,15"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Right Column -->
+                            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                                <!-- First Name -->
+                                <TextBlock Text="الاسم الأول *" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtFirstName"
+                                        FontSize="14"
+                                        Padding="10"
+                                        Margin="0,0,0,15"/>
+
+                                <!-- Date of Birth -->
+                                <TextBlock Text="تاريخ الميلاد *" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <DatePicker x:Name="dpDateOfBirth"
+                                           FontSize="14"
+                                           Padding="10"
+                                           Margin="0,0,0,15"/>
+
+                                <!-- Phone Number -->
+                                <TextBlock Text="رقم الهاتف *" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtPhoneNumber"
+                                        FontSize="14"
+                                        Padding="10"
+                                        Margin="0,0,0,15"/>
+
+                                <!-- National ID -->
+                                <TextBlock Text="الرقم القومي" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtNationalID"
+                                        FontSize="14"
+                                        Padding="10"
+                                        Margin="0,0,0,15"/>
+
+                                <!-- Email -->
+                                <TextBlock Text="البريد الإلكتروني" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtEmail"
+                                        FontSize="14"
+                                        Padding="10"
+                                        Margin="0,0,0,15"/>
+                            </StackPanel>
+
+                            <!-- Left Column -->
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <!-- Last Name -->
+                                <TextBlock Text="اسم العائلة *" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtLastName"
+                                        FontSize="14"
+                                        Padding="10"
+                                        Margin="0,0,0,15"/>
+
+                                <!-- Gender -->
+                                <TextBlock Text="الجنس *" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <ComboBox x:Name="cmbGender"
+                                         FontSize="14"
+                                         Padding="10"
+                                         Margin="0,0,0,15">
+                                    <ComboBoxItem Content="ذكر"/>
+                                    <ComboBoxItem Content="أنثى"/>
+                                </ComboBox>
+
+                                <!-- Phone Number 2 -->
+                                <TextBlock Text="رقم هاتف بديل" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtPhoneNumber2"
+                                        FontSize="14"
+                                        Padding="10"
+                                        Margin="0,0,0,15"/>
+
+                                <!-- Blood Type -->
+                                <TextBlock Text="فصيلة الدم" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <ComboBox x:Name="cmbBloodType"
+                                         FontSize="14"
+                                         Padding="10"
+                                         Margin="0,0,0,15">
+                                    <ComboBoxItem Content="A+"/>
+                                    <ComboBoxItem Content="A-"/>
+                                    <ComboBoxItem Content="B+"/>
+                                    <ComboBoxItem Content="B-"/>
+                                    <ComboBoxItem Content="AB+"/>
+                                    <ComboBoxItem Content="AB-"/>
+                                    <ComboBoxItem Content="O+"/>
+                                    <ComboBoxItem Content="O-"/>
+                                </ComboBox>
+
+                                <!-- Address -->
+                                <TextBlock Text="العنوان" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtAddress"
+                                        FontSize="14"
+                                        Padding="10"
+                                        Height="60"
+                                        TextWrapping="Wrap"
+                                        AcceptsReturn="True"
+                                        VerticalScrollBarVisibility="Auto"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Emergency Contact -->
+                <Border Background="White"
+                       CornerRadius="10"
+                       Padding="20"
+                       Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="🚨 جهة الاتصال في حالات الطوارئ" 
+                                  FontSize="18" 
+                                  FontWeight="Bold"
+                                  Foreground="#333"
+                                  Margin="0,0,0,15"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                                <TextBlock Text="الاسم" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtEmergencyContact"
+                                        FontSize="14"
+                                        Padding="10"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                                <TextBlock Text="رقم الهاتف" 
+                                          FontSize="14" 
+                                          Foreground="#555"
+                                          Margin="0,0,0,5"/>
+                                <TextBox x:Name="txtEmergencyPhone"
+                                        FontSize="14"
+                                        Padding="10"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Medical History -->
+                <Border Background="White"
+                       CornerRadius="10"
+                       Padding="20"
+                       Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="📋 التاريخ المرضي" 
+                                  FontSize="18" 
+                                  FontWeight="Bold"
+                                  Foreground="#333"
+                                  Margin="0,0,0,15"/>
+
+                        <TextBlock Text="الأمراض المزمنة" 
+                                  FontSize="14" 
+                                  Foreground="#555"
+                                  Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtChronicDiseases"
+                                FontSize="14"
+                                Padding="10"
+                                Height="60"
+                                TextWrapping="Wrap"
+                                AcceptsReturn="True"
+                                VerticalScrollBarVisibility="Auto"
+                                Margin="0,0,0,10"/>
+
+                        <TextBlock Text="الحساسية" 
+                                  FontSize="14" 
+                                  Foreground="#555"
+                                  Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtAllergies"
+                                FontSize="14"
+                                Padding="10"
+                                Height="60"
+                                TextWrapping="Wrap"
+                                AcceptsReturn="True"
+                                VerticalScrollBarVisibility="Auto"
+                                Margin="0,0,0,10"/>
+
+                        <TextBlock Text="الأدوية الحالية" 
+                                  FontSize="14" 
+                                  Foreground="#555"
+                                  Margin="0,0,0,5"/>
+                        <TextBox x:Name="txtCurrentMedications"
+                                FontSize="14"
+                                Padding="10"
+                                Height="60"
+                                TextWrapping="Wrap"
+                                AcceptsReturn="True"
+                                VerticalScrollBarVisibility="Auto"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Notes -->
+                <Border Background="White"
+                       CornerRadius="10"
+                       Padding="20">
+                    <StackPanel>
+                        <TextBlock Text="📝 ملاحظات" 
+                                  FontSize="18" 
+                                  FontWeight="Bold"
+                                  Foreground="#333"
+                                  Margin="0,0,0,15"/>
+
+                        <TextBox x:Name="txtNotes"
+                                FontSize="14"
+                                Padding="10"
+                                Height="80"
+                                TextWrapping="Wrap"
+                                AcceptsReturn="True"
+                                VerticalScrollBarVisibility="Auto"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Footer Buttons -->
+        <Border Grid.Row="2" 
+                Background="White"
+                BorderBrush="#E0E0E0"
+                BorderThickness="0,1,0,0"
+                Padding="20">
+            <StackPanel Orientation="Horizontal" 
+                       HorizontalAlignment="Center">
+                <Button x:Name="btnSave"
+                       Content="✅ حفظ"
+                       Background="#4CAF50"
+                       Foreground="White"
+                       BorderThickness="0"
+                       Padding="30,12"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Margin="10,0"
+                       Cursor="Hand"
+                       Click="Save_Click"/>
+
+                <Button Content="❌ إلغاء"
+                       Background="#F44336"
+                       Foreground="White"
+                       BorderThickness="0"
+                       Padding="30,12"
+                       FontSize="16"
+                       FontWeight="Bold"
+                       Margin="10,0"
+                       Cursor="Hand"
+                       Click="Cancel_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

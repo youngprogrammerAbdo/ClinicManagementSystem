@@ -54,7 +54,20 @@ namespace ClinicManagementSystem.Models
             set => SetProperty(ref _lastName, value);
         }
 
-        public string FullName => $"{FirstName} {LastName}";
+        public string FullName
+        {
+            get => $"{FirstName} {LastName}";
+            set
+            {
+                var parts = value.Split(' ');
+                if (parts.Length >= 2)
+                {
+                    FirstName = parts[0];
+                    LastName = string.Join(" ", parts.Skip(1));
+                }
+            }
+        }
+
 
         public DateTime DateOfBirth
         {

@@ -4,7 +4,7 @@
 
 using ClinicManagementSystem.Data;
 using ClinicManagementSystem.Models;
-using Microsoft.Data.Sqlite;
+using System.Data.SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,23 +41,23 @@ namespace ClinicManagementSystem.Repositories
 
             var parameters = new[]
             {
-                new SqliteParameter("@PatientCode", patient.PatientCode ?? GeneratePatientCode()),
-                new SqliteParameter("@FirstName", patient.FirstName),
-                new SqliteParameter("@LastName", patient.LastName),
-                new SqliteParameter("@DateOfBirth", patient.DateOfBirth.ToString("yyyy-MM-dd")),
-                new SqliteParameter("@Gender", patient.Gender),
-                new SqliteParameter("@PhoneNumber", patient.PhoneNumber),
-                new SqliteParameter("@PhoneNumber2", (object)patient.PhoneNumber2 ?? DBNull.Value),
-                new SqliteParameter("@Address", (object)patient.Address ?? DBNull.Value),
-                new SqliteParameter("@NationalID", (object)patient.NationalID ?? DBNull.Value),
-                new SqliteParameter("@BloodType", (object)patient.BloodType ?? DBNull.Value),
-                new SqliteParameter("@Email", (object)patient.Email ?? DBNull.Value),
-                new SqliteParameter("@EmergencyContact", (object)patient.EmergencyContact ?? DBNull.Value),
-                new SqliteParameter("@EmergencyPhone", (object)patient.EmergencyPhone ?? DBNull.Value),
-                new SqliteParameter("@Notes", (object)patient.Notes ?? DBNull.Value),
-                new SqliteParameter("@ProfileImagePath", (object)patient.ProfileImagePath ?? DBNull.Value),
-                new SqliteParameter("@RegistrationDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                new SqliteParameter("@IsActive", patient.IsActive ? 1 : 0)
+                new SQLiteParameter("@PatientCode", patient.PatientCode ?? GeneratePatientCode()),
+                new SQLiteParameter("@FirstName", patient.FirstName),
+                new SQLiteParameter("@LastName", patient.LastName),
+                new SQLiteParameter("@DateOfBirth", patient.DateOfBirth.ToString("yyyy-MM-dd")),
+                new SQLiteParameter("@Gender", patient.Gender),
+                new SQLiteParameter("@PhoneNumber", patient.PhoneNumber),
+                new SQLiteParameter("@PhoneNumber2", (object)patient.PhoneNumber2 ?? DBNull.Value),
+                new SQLiteParameter("@Address", (object)patient.Address ?? DBNull.Value),
+                new SQLiteParameter("@NationalID", (object)patient.NationalID ?? DBNull.Value),
+                new SQLiteParameter("@BloodType", (object)patient.BloodType ?? DBNull.Value),
+                new SQLiteParameter("@Email", (object)patient.Email ?? DBNull.Value),
+                new SQLiteParameter("@EmergencyContact", (object)patient.EmergencyContact ?? DBNull.Value),
+                new SQLiteParameter("@EmergencyPhone", (object)patient.EmergencyPhone ?? DBNull.Value),
+                new SQLiteParameter("@Notes", (object)patient.Notes ?? DBNull.Value),
+                new SQLiteParameter("@ProfileImagePath", (object)patient.ProfileImagePath ?? DBNull.Value),
+                new SQLiteParameter("@RegistrationDate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                new SQLiteParameter("@IsActive", patient.IsActive ? 1 : 0)
             };
 
             var result = _db.ExecuteScalar(query, parameters);
@@ -70,7 +70,7 @@ namespace ClinicManagementSystem.Repositories
         public Patient GetPatientById(int patientId)
         {
             string query = "SELECT * FROM Patients WHERE PatientID = @PatientID";
-            var parameter = new SqliteParameter("@PatientID", patientId);
+            var parameter = new SQLiteParameter("@PatientID", patientId);
 
             var table = _db.ExecuteQuery(query, parameter);
 
@@ -85,7 +85,7 @@ namespace ClinicManagementSystem.Repositories
         public Patient GetPatientByCode(string patientCode)
         {
             string query = "SELECT * FROM Patients WHERE PatientCode = @PatientCode";
-            var parameter = new SqliteParameter("@PatientCode", patientCode);
+            var parameter = new SQLiteParameter("@PatientCode", patientCode);
 
             var table = _db.ExecuteQuery(query, parameter);
 
@@ -126,7 +126,7 @@ namespace ClinicManagementSystem.Repositories
                 AND IsActive = 1
                 ORDER BY RegistrationDate DESC";
 
-            var parameter = new SqliteParameter("@SearchTerm", $"%{searchTerm}%");
+            var parameter = new SQLiteParameter("@SearchTerm", $"%{searchTerm}%");
             var table = _db.ExecuteQuery(query, parameter);
             var patients = new List<Patient>();
 
@@ -165,23 +165,23 @@ namespace ClinicManagementSystem.Repositories
 
             var parameters = new[]
             {
-                new SqliteParameter("@FirstName", patient.FirstName),
-                new SqliteParameter("@LastName", patient.LastName),
-                new SqliteParameter("@DateOfBirth", patient.DateOfBirth.ToString("yyyy-MM-dd")),
-                new SqliteParameter("@Gender", patient.Gender),
-                new SqliteParameter("@PhoneNumber", patient.PhoneNumber),
-                new SqliteParameter("@PhoneNumber2", (object)patient.PhoneNumber2 ?? DBNull.Value),
-                new SqliteParameter("@Address", (object)patient.Address ?? DBNull.Value),
-                new SqliteParameter("@NationalID", (object)patient.NationalID ?? DBNull.Value),
-                new SqliteParameter("@BloodType", (object)patient.BloodType ?? DBNull.Value),
-                new SqliteParameter("@Email", (object)patient.Email ?? DBNull.Value),
-                new SqliteParameter("@EmergencyContact", (object)patient.EmergencyContact ?? DBNull.Value),
-                new SqliteParameter("@EmergencyPhone", (object)patient.EmergencyPhone ?? DBNull.Value),
-                new SqliteParameter("@Notes", (object)patient.Notes ?? DBNull.Value),
-                new SqliteParameter("@ProfileImagePath", (object)patient.ProfileImagePath ?? DBNull.Value),
-                new SqliteParameter("@IsActive", patient.IsActive ? 1 : 0),
-                new SqliteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                new SqliteParameter("@PatientID", patient.PatientID)
+                new SQLiteParameter("@FirstName", patient.FirstName),
+                new SQLiteParameter("@LastName", patient.LastName),
+                new SQLiteParameter("@DateOfBirth", patient.DateOfBirth.ToString("yyyy-MM-dd")),
+                new SQLiteParameter("@Gender", patient.Gender),
+                new SQLiteParameter("@PhoneNumber", patient.PhoneNumber),
+                new SQLiteParameter("@PhoneNumber2", (object)patient.PhoneNumber2 ?? DBNull.Value),
+                new SQLiteParameter("@Address", (object)patient.Address ?? DBNull.Value),
+                new SQLiteParameter("@NationalID", (object)patient.NationalID ?? DBNull.Value),
+                new SQLiteParameter("@BloodType", (object)patient.BloodType ?? DBNull.Value),
+                new SQLiteParameter("@Email", (object)patient.Email ?? DBNull.Value),
+                new SQLiteParameter("@EmergencyContact", (object)patient.EmergencyContact ?? DBNull.Value),
+                new SQLiteParameter("@EmergencyPhone", (object)patient.EmergencyPhone ?? DBNull.Value),
+                new SQLiteParameter("@Notes", (object)patient.Notes ?? DBNull.Value),
+                new SQLiteParameter("@ProfileImagePath", (object)patient.ProfileImagePath ?? DBNull.Value),
+                new SQLiteParameter("@IsActive", patient.IsActive ? 1 : 0),
+                new SQLiteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                new SQLiteParameter("@PatientID", patient.PatientID)
             };
 
             int rowsAffected = _db.ExecuteNonQuery(query, parameters);
@@ -196,8 +196,8 @@ namespace ClinicManagementSystem.Repositories
             string query = "UPDATE Patients SET IsActive = 0, UpdatedAt = @UpdatedAt WHERE PatientID = @PatientID";
             var parameters = new[]
             {
-                new SqliteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                new SqliteParameter("@PatientID", patientId)
+                new SQLiteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                new SQLiteParameter("@PatientID", patientId)
             };
 
             int rowsAffected = _db.ExecuteNonQuery(query, parameters);
@@ -207,7 +207,7 @@ namespace ClinicManagementSystem.Repositories
         public bool HardDeletePatient(int patientId)
         {
             string query = "DELETE FROM Patients WHERE PatientID = @PatientID";
-            var parameter = new SqliteParameter("@PatientID", patientId);
+            var parameter = new SQLiteParameter("@PatientID", patientId);
 
             int rowsAffected = _db.ExecuteNonQuery(query, parameter);
             return rowsAffected > 0;
@@ -221,8 +221,8 @@ namespace ClinicManagementSystem.Repositories
             string query = "UPDATE Patients SET IsActive = 1, UpdatedAt = @UpdatedAt WHERE PatientID = @PatientID";
             var parameters = new[]
             {
-                new SqliteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                new SqliteParameter("@PatientID", patientId)
+                new SQLiteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                new SQLiteParameter("@PatientID", patientId)
             };
 
             int rowsAffected = _db.ExecuteNonQuery(query, parameters);
@@ -236,7 +236,7 @@ namespace ClinicManagementSystem.Repositories
         {
             // تحقق إذا كان موجود
             string checkQuery = "SELECT COUNT(*) FROM MedicalHistory WHERE PatientID = @PatientID";
-            var checkParam = new SqliteParameter("@PatientID", history.PatientID);
+            var checkParam = new SQLiteParameter("@PatientID", history.PatientID);
             var count = Convert.ToInt32(_db.ExecuteScalar(checkQuery, checkParam));
 
             if (count > 0)
@@ -255,14 +255,14 @@ namespace ClinicManagementSystem.Repositories
 
                 var updateParams = new[]
                 {
-                    new SqliteParameter("@ChronicDiseases", (object)history.ChronicDiseases ?? DBNull.Value),
-                    new SqliteParameter("@Allergies", (object)history.Allergies ?? DBNull.Value),
-                    new SqliteParameter("@CurrentMedications", (object)history.CurrentMedications ?? DBNull.Value),
-                    new SqliteParameter("@PreviousSurgeries", (object)history.PreviousSurgeries ?? DBNull.Value),
-                    new SqliteParameter("@FamilyHistory", (object)history.FamilyHistory ?? DBNull.Value),
-                    new SqliteParameter("@Notes", (object)history.Notes ?? DBNull.Value),
-                    new SqliteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
-                    new SqliteParameter("@PatientID", history.PatientID)
+                    new SQLiteParameter("@ChronicDiseases", (object)history.ChronicDiseases ?? DBNull.Value),
+                    new SQLiteParameter("@Allergies", (object)history.Allergies ?? DBNull.Value),
+                    new SQLiteParameter("@CurrentMedications", (object)history.CurrentMedications ?? DBNull.Value),
+                    new SQLiteParameter("@PreviousSurgeries", (object)history.PreviousSurgeries ?? DBNull.Value),
+                    new SQLiteParameter("@FamilyHistory", (object)history.FamilyHistory ?? DBNull.Value),
+                    new SQLiteParameter("@Notes", (object)history.Notes ?? DBNull.Value),
+                    new SQLiteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")),
+                    new SQLiteParameter("@PatientID", history.PatientID)
                 };
                 
                 _db.ExecuteNonQuery(updateQuery, updateParams);
@@ -283,14 +283,14 @@ namespace ClinicManagementSystem.Repositories
 
                 var insertParams = new[]
                 {
-                    new SqliteParameter("@PatientID", history.PatientID),
-                    new SqliteParameter("@ChronicDiseases", (object)history.ChronicDiseases ?? DBNull.Value),
-                    new SqliteParameter("@Allergies", (object)history.Allergies ?? DBNull.Value),
-                    new SqliteParameter("@CurrentMedications", (object)history.CurrentMedications ?? DBNull.Value),
-                    new SqliteParameter("@PreviousSurgeries", (object)history.PreviousSurgeries ?? DBNull.Value),
-                    new SqliteParameter("@FamilyHistory", (object)history.FamilyHistory ?? DBNull.Value),
-                    new SqliteParameter("@Notes", (object)history.Notes ?? DBNull.Value),
-                    new SqliteParameter("@CreatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                    new SQLiteParameter("@PatientID", history.PatientID),
+                    new SQLiteParameter("@ChronicDiseases", (object)history.ChronicDiseases ?? DBNull.Value),
+                    new SQLiteParameter("@Allergies", (object)history.Allergies ?? DBNull.Value),
+                    new SQLiteParameter("@CurrentMedications", (object)history.CurrentMedications ?? DBNull.Value),
+                    new SQLiteParameter("@PreviousSurgeries", (object)history.PreviousSurgeries ?? DBNull.Value),
+                    new SQLiteParameter("@FamilyHistory", (object)history.FamilyHistory ?? DBNull.Value),
+                    new SQLiteParameter("@Notes", (object)history.Notes ?? DBNull.Value),
+                    new SQLiteParameter("@CreatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
                 };
 
                 var result = _db.ExecuteScalar(insertQuery, insertParams);
@@ -301,7 +301,7 @@ namespace ClinicManagementSystem.Repositories
         public MedicalHistory GetMedicalHistory(int patientId)
         {
             string query = "SELECT * FROM MedicalHistory WHERE PatientID = @PatientID";
-            var parameter = new SqliteParameter("@PatientID", patientId);
+            var parameter = new SQLiteParameter("@PatientID", patientId);
 
             var table = _db.ExecuteQuery(query, parameter);
 
@@ -336,7 +336,7 @@ namespace ClinicManagementSystem.Repositories
         public int GetNewPatientsCount(DateTime fromDate)
         {
             string query = "SELECT COUNT(*) FROM Patients WHERE RegistrationDate >= @FromDate AND IsActive = 1";
-            var parameter = new SqliteParameter("@FromDate", fromDate.ToString("yyyy-MM-dd"));
+            var parameter = new SQLiteParameter("@FromDate", fromDate.ToString("yyyy-MM-dd"));
             return Convert.ToInt32(_db.ExecuteScalar(query, parameter));
         }
 
@@ -350,8 +350,8 @@ namespace ClinicManagementSystem.Repositories
 
             var parameters = new[]
             {
-                new SqliteParameter("@FromDate", fromDate.ToString("yyyy-MM-dd")),
-                new SqliteParameter("@ToDate", toDate.ToString("yyyy-MM-dd"))
+                new SQLiteParameter("@FromDate", fromDate.ToString("yyyy-MM-dd")),
+                new SQLiteParameter("@ToDate", toDate.ToString("yyyy-MM-dd"))
             };
 
             return Convert.ToInt32(_db.ExecuteScalar(query, parameters));
@@ -439,48 +439,48 @@ namespace ClinicManagementSystem.Repositories
             string gender = null, string bloodType = null)
         {
             var query = "SELECT * FROM Patients WHERE IsActive = 1";
-            var parameters = new List<SqliteParameter>();
+            var parameters = new List<SQLiteParameter>();
 
             if (!string.IsNullOrEmpty(name))
             {
                 query += " AND (FirstName LIKE @Name OR LastName LIKE @Name)";
-                parameters.Add(new SqliteParameter("@Name", $"%{name}%"));
+                parameters.Add(new SQLiteParameter("@Name", $"%{name}%"));
             }
 
             if (!string.IsNullOrEmpty(phone))
             {
                 query += " AND (PhoneNumber LIKE @Phone OR PhoneNumber2 LIKE @Phone)";
-                parameters.Add(new SqliteParameter("@Phone", $"%{phone}%"));
+                parameters.Add(new SQLiteParameter("@Phone", $"%{phone}%"));
             }
 
             if (!string.IsNullOrEmpty(nationalId))
             {
                 query += " AND NationalID LIKE @NationalID";
-                parameters.Add(new SqliteParameter("@NationalID", $"%{nationalId}%"));
+                parameters.Add(new SQLiteParameter("@NationalID", $"%{nationalId}%"));
             }
 
             if (!string.IsNullOrEmpty(gender))
             {
                 query += " AND Gender = @Gender";
-                parameters.Add(new SqliteParameter("@Gender", gender));
+                parameters.Add(new SQLiteParameter("@Gender", gender));
             }
 
             if (!string.IsNullOrEmpty(bloodType))
             {
                 query += " AND BloodType = @BloodType";
-                parameters.Add(new SqliteParameter("@BloodType", bloodType));
+                parameters.Add(new SQLiteParameter("@BloodType", bloodType));
             }
 
             if (fromDate.HasValue)
             {
                 query += " AND RegistrationDate >= @FromDate";
-                parameters.Add(new SqliteParameter("@FromDate", fromDate.Value.ToString("yyyy-MM-dd")));
+                parameters.Add(new SQLiteParameter("@FromDate", fromDate.Value.ToString("yyyy-MM-dd")));
             }
 
             if (toDate.HasValue)
             {
                 query += " AND RegistrationDate <= @ToDate";
-                parameters.Add(new SqliteParameter("@ToDate", toDate.Value.ToString("yyyy-MM-dd")));
+                parameters.Add(new SQLiteParameter("@ToDate", toDate.Value.ToString("yyyy-MM-dd")));
             }
 
             query += " ORDER BY RegistrationDate DESC";
@@ -507,7 +507,7 @@ namespace ClinicManagementSystem.Repositories
                 ORDER BY RegistrationDate DESC 
                 LIMIT @Count";
 
-            var parameter = new SqliteParameter("@Count", count);
+            var parameter = new SQLiteParameter("@Count", count);
             var table = _db.ExecuteQuery(query, parameter);
             var patients = new List<Patient>();
 
@@ -525,15 +525,15 @@ namespace ClinicManagementSystem.Repositories
         public bool PatientCodeExists(string patientCode, int? excludePatientId = null)
         {
             string query = "SELECT COUNT(*) FROM Patients WHERE PatientCode = @PatientCode";
-            var parameters = new List<SqliteParameter>
+            var parameters = new List<SQLiteParameter>
             {
-                new SqliteParameter("@PatientCode", patientCode)
+                new SQLiteParameter("@PatientCode", patientCode)
             };
 
             if (excludePatientId.HasValue)
             {
                 query += " AND PatientID != @PatientID";
-                parameters.Add(new SqliteParameter("@PatientID", excludePatientId.Value));
+                parameters.Add(new SQLiteParameter("@PatientID", excludePatientId.Value));
             }
 
             var count = Convert.ToInt32(_db.ExecuteScalar(query, parameters.ToArray()));
@@ -585,7 +585,7 @@ namespace ClinicManagementSystem.Repositories
 
             string ids = string.Join(",", patientIds);
             string query = $"UPDATE Patients SET IsActive = 0, UpdatedAt = @UpdatedAt WHERE PatientID IN ({ids})";
-            var parameter = new SqliteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            var parameter = new SQLiteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
             int rowsAffected = _db.ExecuteNonQuery(query, parameter);
             return rowsAffected > 0;
@@ -598,7 +598,7 @@ namespace ClinicManagementSystem.Repositories
 
             string ids = string.Join(",", patientIds);
             string query = $"UPDATE Patients SET IsActive = 1, UpdatedAt = @UpdatedAt WHERE PatientID IN ({ids})";
-            var parameter = new SqliteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            var parameter = new SQLiteParameter("@UpdatedAt", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
             int rowsAffected = _db.ExecuteNonQuery(query, parameter);
             return rowsAffected > 0;

@@ -3,7 +3,8 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-  </PropertyGroup>
+    <UseWindowsForms>true</UseWindowsForms>  
+</PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="EPPlus" Version="8.2.1" />
@@ -12,5 +13,20 @@
     <PackageReference Include="iTextSharp" Version="5.5.13.3" />
     <PackageReference Include="ClosedXML" Version="0.102.1" />
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

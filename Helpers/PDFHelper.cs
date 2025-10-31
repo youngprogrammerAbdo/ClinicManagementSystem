@@ -368,7 +368,7 @@ namespace ClinicManagementSystem.Helpers
                     document.Add(notesTitle);
 
                     Paragraph notes = new Paragraph(prescription.Notes, normalFont);
-                    notes.RunDirection = PdfWriter.RUN_DIRECTION_RTL;
+                    notes.Alignment = PdfWriter.RUN_DIRECTION_RTL;
                     document.Add(notes);
                 }
 

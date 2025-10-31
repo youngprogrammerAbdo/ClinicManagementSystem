@@ -12,8 +12,8 @@ TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\App.xaml
 22-299501362
 
-46-1681457525
-2271615278536
+47342301560
+2362115820551
 Dialogs\AdvancedSearchDialog.xaml;Dialogs\AppointmentDialog.xaml;Dialogs\InvoiceDetailsDialog.xaml;Dialogs\InvoiceDialog.xaml;Dialogs\PatientDetailsDialog.xaml;Dialogs\PatientDialog.xaml;Dialogs\PaymentDialog.xaml;Dialogs\PrescriptionDialog.xaml;Dialogs\SearchPatientDialog.xaml;Dialogs\VisitDialog.xaml;Main\LoginWindow .xaml;Main\MainWindow.xaml;Pages\AppointmentsPage.xaml;Pages\DashboardPage.xaml;Pages\EmployeesPage.xaml;Pages\InventoryPage.xaml;Pages\InvoicesPage.xaml;Pages\PatientsPage.xaml;Pages\QueuePage.xaml;Pages\ReportsPage.xaml;Pages\SettingsPage.xaml;Pages\SurgeriesPage.xaml;
 
 False

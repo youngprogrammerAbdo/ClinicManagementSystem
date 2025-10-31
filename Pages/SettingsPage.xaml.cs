@@ -89,7 +89,7 @@ namespace ClinicManagementSystem.Pages
                     ShowNewFolderButton = true
                 };
 
-                if (folderDialog.ShowDialog() == System.Windows.DialogResult.OK)
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     _backupPath = folderDialog.SelectedPath;
                     txtBackupPath.Text = _backupPath;

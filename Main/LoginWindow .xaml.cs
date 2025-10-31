@@ -29,8 +29,8 @@ namespace ClinicManagementSystem
         {
             try
             {
-                string savedUsername = Properties.Settings.Default.SavedUsername;
-                bool rememberMe = Properties.Settings.Default.RememberMe;
+                string savedUsername = Settings.Default.SavedUsername;
+                bool rememberMe = Settings.Default.RememberMe;
 
                 if (rememberMe && !string.IsNullOrEmpty(savedUsername))
                 {
@@ -91,15 +91,15 @@ namespace ClinicManagementSystem
                     // حفظ اسم المستخدم إذا كان الخيار مفعل
                     if (chkRememberMe.IsChecked == true)
                     {
-                        Properties.Settings.Default.SavedUsername = txtUsername.Text;
-                        Properties.Settings.Default.RememberMe = true;
+                        Settings.Default.SavedUsername = txtUsername.Text;
+                        Settings.Default.RememberMe = true;
                     }
                     else
                     {
-                        Properties.Settings.Default.SavedUsername = string.Empty;
-                        Properties.Settings.Default.RememberMe = false;
+                        Settings.Default.SavedUsername = string.Empty;
+                        Settings.Default.RememberMe = false;
                     }
-                    Properties.Settings.Default.Save();
+                    Settings.Default.Save();
 
                     // تسجيل النشاط
                     _userRepo.LogActivity(user.UserID, "تسجيل دخول", "Users", user.UserID,

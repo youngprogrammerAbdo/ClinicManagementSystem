@@ -355,7 +355,7 @@ namespace ClinicManagementSystem.Helpers
                         }
                         else if (item.ExpiryDate.HasValue && item.ExpiryDate.Value <= DateTime.Now.AddMonths(3))
                         {
-                            worksheet.Range(row, 1, row, 10).Style.Fill.BackgroundColor = XLColor.LightOrange;
+                            worksheet.Range(row, 1, row, 10).Style.Fill.BackgroundColor = XLColor.Orange;
                         }
 
                         row++;
@@ -437,7 +437,7 @@ namespace ClinicManagementSystem.Helpers
                     int row = 2;
                     foreach (var visit in visits)
                     {
-                        worksheet.Cell(row, 1).Value = visit.VisitId;
+                        worksheet.Cell(row, 1).Value = visit.VisitID;
                         worksheet.Cell(row, 2).Value = visit.VisitDate.ToString("dd/MM/yyyy HH:mm");
                         worksheet.Cell(row, 3).Value = visit.Patient?.FullName ?? "";
                         worksheet.Cell(row, 4).Value = visit.VisitType;
@@ -504,11 +504,11 @@ namespace ClinicManagementSystem.Helpers
                     int row = 2;
                     foreach (var prescription in prescriptions)
                     {
-                        worksheet.Cell(row, 1).Value = prescription.PrescriptionId;
+                        worksheet.Cell(row, 1).Value = prescription.PrescriptionID;
                         worksheet.Cell(row, 2).Value = prescription.PrescriptionDate.ToString("dd/MM/yyyy");
                         worksheet.Cell(row, 3).Value = prescription.Patient?.FullName ?? "";
                         worksheet.Cell(row, 4).Value = prescription.Details?.Count ?? 0;
-                        worksheet.Cell(row, 5).Value = prescription.DoctorName ?? "";
+                        worksheet.Cell(row, 5).Value = prescription.Doctor.FullName ?? "";
                         worksheet.Cell(row, 6).Value = prescription.Notes ?? "";
                         row++;
                     }

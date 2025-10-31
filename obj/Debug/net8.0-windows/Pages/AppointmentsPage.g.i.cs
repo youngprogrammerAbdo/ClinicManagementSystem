@@ -117,7 +117,7 @@ namespace ClinicManagementSystem.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ClinicManagementSystem;V1.0.0.0;component/pages/appointmentspage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ClinicManagementSystem;component/pages/appointmentspage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\AppointmentsPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

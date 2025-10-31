@@ -85,7 +85,7 @@ namespace ClinicManagementSystem.Dialogs {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/ClinicManagementSystem;V1.0.0.0;component/dialogs/searchpatientdialog.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/ClinicManagementSystem;component/dialogs/searchpatientdialog.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Dialogs\SearchPatientDialog.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

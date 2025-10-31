@@ -1,27 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// ====================================
+// PrescriptionDialog.xaml.cs
+// ====================================
+using ClinicManagementSystem.Repositories;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClinicManagementSystem.Dialogs
 {
-    /// <summary>
-    /// Interaction logic for PrescriptionDialog.xaml
-    /// </summary>
     public partial class PrescriptionDialog : Window
     {
-        public PrescriptionDialog()
+        private readonly VisitRepository _visitRepo;
+        private readonly PatientRepository _patientRepo;
+        private int _visitId;
+        private int _patientId;
+
+        public PrescriptionDialog(int visitId)
         {
             InitializeComponent();
+            _visitRepo = new VisitRepository();
+            _patientRepo = new PatientRepository();
+            _visitId = visitId;
+
+            var visit = _visitRepo.GetVisitById(visitId);
+            if (visit != null)
+            {
+                _patientId = visit.PatientID;
+                var patient = _patientRepo.GetPatientById(_patientId);
+                txtPatientName.Text = patient?.FullName ?? "غير محدد";
+            }
+
+            AddMedicineRow();
+        }
+
+        private void AddMedicine_Click(object sender, RoutedEventArgs e)
+        {
+            AddMedicineRow();
+        }
+
+        private void AddMedicineRow()
+        {
+            // Add medicine input row to panel
+            MessageBox.Show("إضافة دواء", "معلومة", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            // Save prescription
+            MessageBox.Show("حفظ الروشتة", "معلومة", MessageBoxButton.OK, MessageBoxImage.Information);
+            DialogResult = true;
+            Close();
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
         }
     }
 }

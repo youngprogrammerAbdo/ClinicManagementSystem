@@ -1,12 +1,169 @@
-﻿<Window x:Class="ClinicManagementSystem.Pages.SurgeriesPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ClinicManagementSystem.Pages"
-        mc:Ignorable="d"
-        Title="SurgeriesPage" Height="450" Width="800">
-    <Grid>
-        
+﻿<Page x:Class="ClinicManagementSystem.Pages.SurgeriesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      FlowDirection="RightToLeft"
+      Title="Surgeries">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="🏥 إدارة العمليات الجراحية" FontSize="24" FontWeight="Bold" Foreground="#333"/>
+                    <TextBlock Text="تسجيل وإدارة جميع العمليات الجراحية" FontSize="14" Foreground="#666" Margin="0,5,0,0"/>
+                </StackPanel>
+
+                <Button Grid.Column="1" Content="➕ عملية جديدة" Background="#E91E63" Foreground="White" 
+                        BorderThickness="0" Padding="20,10" FontSize="14" Cursor="Hand" Click="AddSurgery_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- Stats & Filters -->
+        <Border Grid.Row="1" Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,15">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Stats -->
+                <UniformGrid Grid.Row="0" Columns="4" Margin="0,0,0,15">
+                    <Border Background="#E91E63" CornerRadius="8" Padding="15" Margin="5">
+                        <StackPanel>
+                            <TextBlock Text="📊 إجمالي العمليات" FontSize="12" Foreground="White"/>
+                            <TextBlock x:Name="txtTotalSurgeries" Text="0" FontSize="28" FontWeight="Bold" 
+                                       Foreground="White" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#FF9800" CornerRadius="8" Padding="15" Margin="5">
+                        <StackPanel>
+                            <TextBlock Text="⏳ مجدولة" FontSize="12" Foreground="White"/>
+                            <TextBlock x:Name="txtScheduled" Text="0" FontSize="28" FontWeight="Bold" 
+                                       Foreground="White" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#4CAF50" CornerRadius="8" Padding="15" Margin="5">
+                        <StackPanel>
+                            <TextBlock Text="✅ تمت" FontSize="12" Foreground="White"/>
+                            <TextBlock x:Name="txtCompleted" Text="0" FontSize="28" FontWeight="Bold" 
+                                       Foreground="White" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Background="#9E9E9E" CornerRadius="8" Padding="15" Margin="5">
+                        <StackPanel>
+                            <TextBlock Text="❌ ملغية" FontSize="12" Foreground="White"/>
+                            <TextBlock x:Name="txtCancelled" Text="0" FontSize="28" FontWeight="Bold" 
+                                       Foreground="White" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Border>
+                </UniformGrid>
+
+                <!-- Filters -->
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox x:Name="txtSearch" Grid.Column="0" FontSize="14" Padding="10" 
+                             VerticalContentAlignment="Center" TextChanged="txtSearch_TextChanged"/>
+
+                    <ComboBox x:Name="cmbStatusFilter" Grid.Column="1" Width="150" Margin="10,0" 
+                              FontSize="14" SelectionChanged="StatusFilter_Changed">
+                        <ComboBoxItem Content="جميع العمليات" IsSelected="True"/>
+                        <ComboBoxItem Content="مجدولة"/>
+                        <ComboBoxItem Content="تمت"/>
+                        <ComboBoxItem Content="ملغية"/>
+                    </ComboBox>
+
+                    <Button Grid.Column="2" Content="📊 تصدير Excel" Background="#4CAF50" Foreground="White" 
+                            BorderThickness="0" Padding="15,10" FontSize="14" Cursor="Hand" Click="ExportExcel_Click"/>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <!-- Surgeries DataGrid -->
+        <Border Grid.Row="2" Background="White" CornerRadius="10" Padding="20">
+            <DataGrid x:Name="dgSurgeries" AutoGenerateColumns="False" IsReadOnly="True"
+                      GridLinesVisibility="None" HeadersVisibility="Column" Background="White"
+                      RowBackground="#FAFAFA" AlternatingRowBackground="White" BorderThickness="0">
+
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#F5F5F5"/>
+                        <Setter Property="Foreground" Value="#333"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Padding" Value="10"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="التاريخ المجدول" Binding="{Binding ScheduledDate, StringFormat='{}{0:dd/MM/yyyy}'}" Width="120"/>
+                    <DataGridTextColumn Header="المريض" Binding="{Binding PatientName}" Width="*"/>
+                    <DataGridTextColumn Header="اسم العملية" Binding="{Binding SurgeryName}" Width="*"/>
+                    <DataGridTextColumn Header="النوع" Binding="{Binding SurgeryType}" Width="100"/>
+                    <DataGridTextColumn Header="الطبيب" Binding="{Binding DoctorName}" Width="150"/>
+                    <DataGridTextColumn Header="التكلفة" Binding="{Binding Cost, StringFormat='{}{0:N2}'}" Width="100"/>
+
+                    <DataGridTemplateColumn Header="الحالة" Width="100">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border CornerRadius="4" Padding="8,4">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Status}" Value="مجدولة">
+                                                    <Setter Property="Background" Value="#FFE082"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value="تمت">
+                                                    <Setter Property="Background" Value="#C8E6C9"/>
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Status}" Value="ملغية">
+                                                    <Setter Property="Background" Value="#FFCDD2"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <TextBlock Text="{Binding Status}" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="الإجراءات" Width="200">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <Button Content="👁️" Background="#2196F3" Foreground="White"
+                                            BorderThickness="0" Padding="8,4" Margin="2" FontSize="12"
+                                            Cursor="Hand" Click="ViewSurgery_Click" Tag="{Binding SurgeryID}"/>
+                                    <Button Content="✏️" Background="#FF9800" Foreground="White"
+                                            BorderThickness="0" Padding="8,4" Margin="2" FontSize="12"
+                                            Cursor="Hand" Click="EditSurgery_Click" Tag="{Binding SurgeryID}"/>
+                                    <Button Content="❌" Background="#F44336" Foreground="White"
+                                            BorderThickness="0" Padding="8,4" Margin="2" FontSize="12"
+                                            Cursor="Hand" Click="CancelSurgery_Click" Tag="{Binding SurgeryID}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
     </Grid>
-</Window>
+</Page>

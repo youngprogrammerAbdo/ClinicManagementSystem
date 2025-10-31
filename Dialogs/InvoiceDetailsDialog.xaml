@@ -1,12 +1,138 @@
 ﻿<Window x:Class="ClinicManagementSystem.Dialogs.InvoiceDetailsDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ClinicManagementSystem.Dialogs"
-        mc:Ignorable="d"
-        Title="InvoiceDetailsDialog" Height="450" Width="800">
-    <Grid>
-        
+        Title="تفاصيل الفاتورة" Height="700" Width="900"
+        WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#4CAF50" Padding="20">
+            <Grid>
+                <StackPanel HorizontalAlignment="Right">
+                    <TextBlock Text="💰 تفاصيل الفاتورة" FontSize="22" FontWeight="Bold" Foreground="White"/>
+                    <TextBlock x:Name="txtInvoiceNumber" Text="{Binding InvoiceNumber}" FontSize="14" Foreground="#E8F5E9" Margin="0,5,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <Button Content="🖨️ طباعة" Background="White" Foreground="#4CAF50" BorderThickness="0"
+                            Padding="15,8" Margin="5" Cursor="Hand" Click="Print_Click"/>
+                    <Button Content="💰 إضافة دفعة" Background="#FF9800" Foreground="White" BorderThickness="0"
+                            Padding="15,8" Margin="5" Cursor="Hand" Click="AddPayment_Click"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Content -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="20">
+            <StackPanel>
+                <!-- Invoice Info -->
+                <Border Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,15">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="معلومات الفاتورة" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,0,0,15"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                <TextBlock Text="التاريخ: " FontWeight="Bold"/>
+                                <TextBlock Text="{Binding InvoiceDate, StringFormat='{}{0:dd/MM/yyyy HH:mm}'}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                <TextBlock Text="النوع: " FontWeight="Bold"/>
+                                <TextBlock Text="{Binding InvoiceType}"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="بيانات المريض" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,0,0,15"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,5">
+                                <TextBlock Text="الاسم: " FontWeight="Bold"/>
+                                <TextBlock x:Name="txtPatientName" Text=""/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- Invoice Items -->
+                <Border Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="📋 بنود الفاتورة" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,0,0,15"/>
+                        <DataGrid x:Name="dgItems" AutoGenerateColumns="False" IsReadOnly="True"
+                                  GridLinesVisibility="None" HeadersVisibility="Column" Background="White"
+                                  BorderThickness="0" CanUserResizeColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="الوصف" Binding="{Binding Description}" Width="*"/>
+                                <DataGridTextColumn Header="الكمية" Binding="{Binding Quantity}" Width="80"/>
+                                <DataGridTextColumn Header="السعر" Binding="{Binding UnitPrice, StringFormat='{}{0:N2}'}" Width="100"/>
+                                <DataGridTextColumn Header="الإجمالي" Binding="{Binding TotalPrice, StringFormat='{}{0:N2}'}" Width="100"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Totals -->
+                <Border Background="White" CornerRadius="10" Padding="20" Margin="0,0,0,15">
+                    <StackPanel>
+                        <Grid Margin="0,5">
+                            <TextBlock Text="الإجمالي:" FontSize="14" HorizontalAlignment="Right"/>
+                            <TextBlock Text="{Binding TotalAmount, StringFormat='{}{0:N2} جنيه'}" FontSize="14" FontWeight="Bold" 
+                                       Foreground="#2196F3" HorizontalAlignment="Left"/>
+                        </Grid>
+                        <Grid Margin="0,5">
+                            <TextBlock Text="الخصم:" FontSize="14" HorizontalAlignment="Right"/>
+                            <TextBlock Text="{Binding DiscountAmount, StringFormat='{}{0:N2} جنيه'}" FontSize="14" 
+                                       Foreground="#FF9800" HorizontalAlignment="Left"/>
+                        </Grid>
+                        <Separator Margin="0,10"/>
+                        <Grid Margin="0,5">
+                            <TextBlock Text="الصافي:" FontSize="16" FontWeight="Bold" HorizontalAlignment="Right"/>
+                            <TextBlock Text="{Binding NetAmount, StringFormat='{}{0:N2} جنيه'}" FontSize="18" FontWeight="Bold" 
+                                       Foreground="#4CAF50" HorizontalAlignment="Left"/>
+                        </Grid>
+                        <Grid Margin="0,5">
+                            <TextBlock Text="المدفوع:" FontSize="14" HorizontalAlignment="Right"/>
+                            <TextBlock Text="{Binding PaidAmount, StringFormat='{}{0:N2} جنيه'}" FontSize="14" 
+                                       Foreground="#4CAF50" HorizontalAlignment="Left"/>
+                        </Grid>
+                        <Grid Margin="0,5">
+                            <TextBlock Text="المتبقي:" FontSize="14" FontWeight="Bold" HorizontalAlignment="Right"/>
+                            <TextBlock Text="{Binding RemainingAmount, StringFormat='{}{0:N2} جنيه'}" FontSize="14" FontWeight="Bold" 
+                                       Foreground="#F44336" HorizontalAlignment="Left"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Payments -->
+                <Border Background="White" CornerRadius="10" Padding="20">
+                    <StackPanel>
+                        <TextBlock Text="💳 المدفوعات" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,0,0,15"/>
+                        <DataGrid x:Name="dgPayments" AutoGenerateColumns="False" IsReadOnly="True"
+                                  GridLinesVisibility="None" HeadersVisibility="Column" Background="White"
+                                  BorderThickness="0">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="التاريخ" Binding="{Binding PaymentDate, StringFormat='{}{0:dd/MM/yyyy HH:mm}'}" Width="150"/>
+                                <DataGridTextColumn Header="المبلغ" Binding="{Binding Amount, StringFormat='{}{0:N2}'}" Width="100"/>
+                                <DataGridTextColumn Header="طريقة الدفع" Binding="{Binding PaymentMethod}" Width="120"/>
+                                <DataGridTextColumn Header="ملاحظات" Binding="{Binding Notes}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Footer -->
+        <Border Grid.Row="2" Background="White" BorderBrush="#E0E0E0" BorderThickness="0,1,0,0" Padding="20">
+            <Button Content="✖ إغلاق" Background="#9E9E9E" Foreground="White" BorderThickness="0"
+                    Padding="30,12" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center"
+                    Cursor="Hand" Click="Close_Click"/>
+        </Border>
     </Grid>
 </Window>

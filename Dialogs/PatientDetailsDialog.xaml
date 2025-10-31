@@ -1,12 +1,178 @@
 ﻿<Window x:Class="ClinicManagementSystem.Dialogs.PatientDetailsDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ClinicManagementSystem.Dialogs"
-        mc:Ignorable="d"
-        Title="PatientDetailsDialog" Height="450" Width="800">
-    <Grid>
-        
+        Title="تفاصيل المريض" 
+        Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft"
+        WindowState="Maximized">
+
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#2196F3" Padding="20">
+            <Grid>
+                <TextBlock Text="📋 تفاصيل المريض" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Right"/>
+                <Button Content="✏️ تعديل البيانات" Background="#4CAF50" Foreground="White" BorderThickness="0"
+                        Padding="20,10" FontSize="14" HorizontalAlignment="Left" Cursor="Hand" Click="Edit_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- Content -->
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Margin="20">
+            <StackPanel>
+                <!-- Patient Info Card -->
+                <Border Background="White" CornerRadius="10" Padding="25" Margin="0,0,0,15">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Profile Picture -->
+                        <Border Grid.Column="0" Width="150" Height="150" CornerRadius="75" 
+                                Background="#E3F2FD" Margin="0,0,30,0">
+                            <TextBlock Text="👤" FontSize="80" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+
+                        <!-- Patient Details -->
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Grid.Row="0" Text="{Binding FullName}" FontSize="28" FontWeight="Bold" Foreground="#333"/>
+
+                            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,0">
+                                <Border Background="#E3F2FD" CornerRadius="5" Padding="10,5" Margin="0,0,10,0">
+                                    <TextBlock>
+                                        <Run Text="الكود: " FontWeight="Bold"/>
+                                        <Run Text="{Binding PatientCode}"/>
+                                    </TextBlock>
+                                </Border>
+                                <Border Background="#FFF3E0" CornerRadius="5" Padding="10,5" Margin="0,0,10,0">
+                                    <TextBlock>
+                                        <Run Text="العمر: " FontWeight="Bold"/>
+                                        <Run Text="{Binding Age}"/>
+                                        <Run Text=" سنة"/>
+                                    </TextBlock>
+                                </Border>
+                                <Border Background="#E8F5E9" CornerRadius="5" Padding="10,5">
+                                    <TextBlock>
+                                        <Run Text="الجنس: " FontWeight="Bold"/>
+                                        <Run Text="{Binding Gender}"/>
+                                    </TextBlock>
+                                </Border>
+                            </StackPanel>
+
+                            <UniformGrid Grid.Row="2" Columns="3" Margin="0,20,0,0">
+                                <StackPanel Margin="0,0,10,0">
+                                    <TextBlock Text="📱 الهاتف" FontSize="12" Foreground="#999"/>
+                                    <TextBlock Text="{Binding PhoneNumber}" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,5,0,0"/>
+                                </StackPanel>
+                                <StackPanel Margin="0,0,10,0">
+                                    <TextBlock Text="📧 البريد الإلكتروني" FontSize="12" Foreground="#999"/>
+                                    <TextBlock Text="{Binding Email}" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,5,0,0"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <TextBlock Text="📍 العنوان" FontSize="12" Foreground="#999"/>
+                                    <TextBlock Text="{Binding Address}" FontSize="16" FontWeight="Bold" Foreground="#333" Margin="0,5,0,0" TextTrimming="CharacterEllipsis"/>
+                                </StackPanel>
+                            </UniformGrid>
+                        </Grid>
+                    </Grid>
+                </Border>
+
+                <!-- Medical History -->
+                <Border Background="White" CornerRadius="10" Padding="25" Margin="0,0,0,15">
+                    <StackPanel>
+                        <TextBlock Text="📋 التاريخ المرضي" FontSize="20" FontWeight="Bold" Foreground="#333" Margin="0,0,0,20"/>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackPanel Grid.Column="0" Margin="0,0,15,0">
+                                <TextBlock Text="🔴 الأمراض المزمنة" FontSize="14" FontWeight="Bold" Foreground="#666" Margin="0,0,0,5"/>
+                                <TextBox Text="{Binding MedicalHistory.ChronicDiseases}" IsReadOnly="True" 
+                                         Background="#FAFAFA" BorderThickness="0" Padding="10" Height="80" 
+                                         TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+                                <TextBlock Text="⚠️ الحساسية" FontSize="14" FontWeight="Bold" Foreground="#666" Margin="0,15,0,5"/>
+                                <TextBox Text="{Binding MedicalHistory.Allergies}" IsReadOnly="True" 
+                                         Background="#FAFAFA" BorderThickness="0" Padding="10" Height="80" 
+                                         TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Margin="15,0,0,0">
+                                <TextBlock Text="💊 الأدوية الحالية" FontSize="14" FontWeight="Bold" Foreground="#666" Margin="0,0,0,5"/>
+                                <TextBox Text="{Binding MedicalHistory.CurrentMedications}" IsReadOnly="True" 
+                                         Background="#FAFAFA" BorderThickness="0" Padding="10" Height="80" 
+                                         TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+
+                                <TextBlock Text="🏥 العمليات السابقة" FontSize="14" FontWeight="Bold" Foreground="#666" Margin="0,15,0,5"/>
+                                <TextBox Text="{Binding MedicalHistory.PreviousSurgeries}" IsReadOnly="True" 
+                                         Background="#FAFAFA" BorderThickness="0" Padding="10" Height="80" 
+                                         TextWrapping="Wrap" VerticalScrollBarVisibility="Auto"/>
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- Tabs for Visits and Invoices -->
+                <TabControl Background="Transparent" BorderThickness="0">
+                    <TabItem Header="📋 الزيارات" FontSize="16" Padding="20,10">
+                        <Border Background="White" CornerRadius="10" Padding="20" Margin="0,10,0,0">
+                            <DataGrid x:Name="dgVisits" AutoGenerateColumns="False" IsReadOnly="True"
+                                      GridLinesVisibility="None" HeadersVisibility="Column" Background="White"
+                                      RowBackground="#FAFAFA" AlternatingRowBackground="White" BorderThickness="0">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="التاريخ" Binding="{Binding VisitDate, StringFormat='{}{0:dd/MM/yyyy}'}" Width="100"/>
+                                    <DataGridTextColumn Header="نوع الكشف" Binding="{Binding VisitType}" Width="120"/>
+                                    <DataGridTextColumn Header="الشكوى" Binding="{Binding ChiefComplaint}" Width="*"/>
+                                    <DataGridTextColumn Header="التشخيص" Binding="{Binding Diagnosis}" Width="*"/>
+                                    <DataGridTextColumn Header="الحالة" Binding="{Binding VisitStatus}" Width="100"/>
+                                    <DataGridTextColumn Header="الرسوم" Binding="{Binding ExaminationFee, StringFormat='{}{0:N2}'}" Width="80"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Border>
+                    </TabItem>
+
+                    <TabItem Header="💰 الفواتير" FontSize="16" Padding="20,10">
+                        <Border Background="White" CornerRadius="10" Padding="20" Margin="0,10,0,0">
+                            <DataGrid x:Name="dgInvoices" AutoGenerateColumns="False" IsReadOnly="True"
+                                      GridLinesVisibility="None" HeadersVisibility="Column" Background="White"
+                                      RowBackground="#FAFAFA" AlternatingRowBackground="White" BorderThickness="0">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="رقم الفاتورة" Binding="{Binding InvoiceNumber}" Width="120"/>
+                                    <DataGridTextColumn Header="التاريخ" Binding="{Binding InvoiceDate, StringFormat='{}{0:dd/MM/yyyy}'}" Width="100"/>
+                                    <DataGridTextColumn Header="النوع" Binding="{Binding InvoiceType}" Width="100"/>
+                                    <DataGridTextColumn Header="الإجمالي" Binding="{Binding TotalAmount, StringFormat='{}{0:N2}'}" Width="100"/>
+                                    <DataGridTextColumn Header="المدفوع" Binding="{Binding PaidAmount, StringFormat='{}{0:N2}'}" Width="100"/>
+                                    <DataGridTextColumn Header="المتبقي" Binding="{Binding RemainingAmount, StringFormat='{}{0:N2}'}" Width="100"/>
+                                    <DataGridTextColumn Header="الحالة" Binding="{Binding PaymentStatus}" Width="120"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Border>
+                    </TabItem>
+                </TabControl>
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- Footer -->
+        <Border Grid.Row="2" Background="White" BorderBrush="#E0E0E0" BorderThickness="0,1,0,0" Padding="20">
+            <Button Content="✖ إغلاق" Background="#9E9E9E" Foreground="White" BorderThickness="0"
+                    Padding="30,12" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center"
+                    Cursor="Hand" Click="Close_Click"/>
+        </Border>
     </Grid>
 </Window>

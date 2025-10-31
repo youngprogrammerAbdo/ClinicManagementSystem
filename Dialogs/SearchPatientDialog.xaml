@@ -1,12 +1,167 @@
 ﻿<Window x:Class="ClinicManagementSystem.Dialogs.SearchPatientDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ClinicManagementSystem.Dialogs"
-        mc:Ignorable="d"
-        Title="SearchPatientDialog" Height="450" Width="800">
-    <Grid>
-        
+        Title="بحث عن مريض" 
+        Height="600" Width="900"
+        WindowStartupLocation="CenterScreen"
+        FlowDirection="RightToLeft"
+        ResizeMode="NoResize">
+
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0" Background="#2196F3" Padding="20">
+            <TextBlock Text="🔍 بحث عن مريض" FontSize="22" FontWeight="Bold" Foreground="White"/>
+        </Border>
+
+        <!-- Search Box -->
+        <Border Grid.Row="1" Background="White" Padding="20" Margin="20,20,20,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="txtSearch" Grid.Column="0" FontSize="16" Padding="12"
+                         TextChanged="txtSearch_TextChanged"
+                         VerticalContentAlignment="Center">
+                    <TextBox.Style>
+                        <Style TargetType="TextBox">
+                            <Setter Property="BorderBrush" Value="#BDBDBD"/>
+                            <Setter Property="BorderThickness" Value="2"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="BorderBrush" Value="#2196F3"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBox.Style>
+                    <TextBox.Template>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border Background="White" 
+                                   BorderBrush="{TemplateBinding BorderBrush}"
+                                   BorderThickness="{TemplateBinding BorderThickness}"
+                                   CornerRadius="8">
+                                <Grid>
+                                    <TextBlock Text="🔍 ابحث باسم المريض، رقم الهاتف، أو الكود..." 
+                                              Foreground="#999"
+                                              Margin="15,0"
+                                              VerticalAlignment="Center"
+                                              IsHitTestVisible="False">
+                                        <TextBlock.Style>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Text, ElementName=txtSearch}" Value="">
+                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                    <ScrollViewer x:Name="PART_ContentHost" Margin="15,0"/>
+                                </Grid>
+                            </Border>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+
+                <Button Grid.Column="1" Content="🔍 بحث" Background="#4CAF50" Foreground="White"
+                        BorderThickness="0" Padding="25,12" Margin="10,0,0,0" FontSize="14"
+                        Cursor="Hand" Click="Search_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- Results DataGrid -->
+        <Border Grid.Row="2" Background="White" Margin="20" Padding="20" CornerRadius="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,15">
+                    <TextBlock Text="النتائج: " FontSize="14" Foreground="#666" VerticalAlignment="Center"/>
+                    <TextBlock x:Name="txtResultCount" Text="0" FontSize="14" FontWeight="Bold" 
+                               Foreground="#2196F3" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                </StackPanel>
+
+                <DataGrid x:Name="dgResults" Grid.Row="1" 
+                          AutoGenerateColumns="False" IsReadOnly="True"
+                          GridLinesVisibility="None" HeadersVisibility="Column"
+                          Background="White" RowBackground="#FAFAFA" AlternatingRowBackground="White"
+                          BorderThickness="0" SelectionMode="Single"
+                          MouseDoubleClick="dgResults_MouseDoubleClick">
+
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="#F5F5F5"/>
+                            <Setter Property="Foreground" Value="#333"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Padding" Value="10"/>
+                            <Setter Property="BorderThickness" Value="0,0,0,2"/>
+                            <Setter Property="BorderBrush" Value="#E0E0E0"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#E3F2FD"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="#BBDEFB"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="الكود" Binding="{Binding PatientCode}" Width="120"/>
+                        <DataGridTextColumn Header="الاسم الكامل" Binding="{Binding FullName}" Width="*"/>
+                        <DataGridTextColumn Header="العمر" Binding="{Binding Age}" Width="60"/>
+                        <DataGridTextColumn Header="الجنس" Binding="{Binding Gender}" Width="70"/>
+                        <DataGridTextColumn Header="رقم الهاتف" Binding="{Binding PhoneNumber}" Width="120"/>
+                        <DataGridTextColumn Header="تاريخ التسجيل" 
+                                           Binding="{Binding RegistrationDate, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                                           Width="120"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <!-- No Results Message -->
+                <StackPanel Grid.Row="1" x:Name="pnlNoResults" 
+                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Visibility="Collapsed">
+                    <TextBlock Text="🔍" FontSize="72" Foreground="#CCC" 
+                               HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                    <TextBlock Text="لا توجد نتائج" FontSize="24" Foreground="#999" 
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="جرب البحث بكلمات مختلفة" FontSize="14" Foreground="#BBB" 
+                               HorizontalAlignment="Center" Margin="0,10,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Footer Buttons -->
+        <Border Grid.Row="3" Background="White" BorderBrush="#E0E0E0" 
+                BorderThickness="0,1,0,0" Padding="20">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="✅ اختيار" Background="#4CAF50" Foreground="White"
+                        BorderThickness="0" Padding="30,12" FontSize="16" FontWeight="Bold"
+                        Margin="10,0" Cursor="Hand" Click="Select_Click"/>
+
+                <Button Content="❌ إلغاء" Background="#F44336" Foreground="White"
+                        BorderThickness="0" Padding="30,12" FontSize="16" FontWeight="Bold"
+                        Margin="10,0" Cursor="Hand" Click="Cancel_Click"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

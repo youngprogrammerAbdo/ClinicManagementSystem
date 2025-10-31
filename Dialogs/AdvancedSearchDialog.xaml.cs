@@ -1,27 +1,49 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// ====================================
+// AdvancedSearchDialog.xaml.cs
+// ====================================
+using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ClinicManagementSystem.Dialogs
 {
-    /// <summary>
-    /// Interaction logic for AdvancedSearchDialog.xaml
-    /// </summary>
     public partial class AdvancedSearchDialog : Window
     {
+        public string SearchName { get; private set; }
+        public string SearchPhone { get; private set; }
+        public string SearchNationalID { get; private set; }
+        public DateTime? FromDate { get; private set; }
+        public DateTime? ToDate { get; private set; }
+
         public AdvancedSearchDialog()
         {
             InitializeComponent();
+        }
+
+        private void Search_Click(object sender, RoutedEventArgs e)
+        {
+            SearchName = txtName.Text;
+            SearchPhone = txtPhone.Text;
+            SearchNationalID = txtNationalID.Text;
+            FromDate = dpFromDate.SelectedDate;
+            ToDate = dpToDate.SelectedDate;
+
+            DialogResult = true;
+            Close();
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
+        }
+
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            txtName.Clear();
+            txtPhone.Clear();
+            txtNationalID.Clear();
+            dpFromDate.SelectedDate = null;
+            dpToDate.SelectedDate = null;
         }
     }
 }

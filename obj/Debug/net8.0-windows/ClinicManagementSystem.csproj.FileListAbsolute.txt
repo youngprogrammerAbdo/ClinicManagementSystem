@@ -13,9 +13,15 @@ C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-window
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\QueuePage.baml
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\ReportsPage.baml
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\SettingsPage.baml
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\AdvancedSearchDialog.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\AppointmentDialog.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\InvoiceDetailsDialog.g.cs
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\InvoiceDialog.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\PatientDetailsDialog.g.cs
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\PatientDialog.g.cs
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\PaymentDialog.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\PrescriptionDialog.g.cs
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\SearchPatientDialog.g.cs
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Dialogs\VisitDialog.g.cs
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Main\LoginWindow .g.cs
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Main\MainWindow.g.cs
@@ -29,8 +35,4 @@ C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-window
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\Pages\SettingsPage.g.cs
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\App.g.cs
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem_MarkupCompile.cache
-C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.g.resources
-C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.AssemblyInfoInputs.cache
-C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.AssemblyInfo.cs
-C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\obj\Debug\net8.0-windows\ClinicManagementSystem_MarkupCompile.lref

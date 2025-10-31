@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|c:\\users\\abdelrahman\\source\\repos\\clinicmanagementsystem\\dialogs\\advancedsearchdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:dialogs\\advancedsearchdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|c:\\users\\abdelrahman\\source\\repos\\clinicmanagementsystem\\dialogs\\prescriptiondialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:dialogs\\prescriptiondialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|c:\\users\\abdelrahman\\source\\repos\\clinicmanagementsystem\\dialogs\\appointmentdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:dialogs\\appointmentdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|c:\\users\\abdelrahman\\source\\repos\\clinicmanagementsystem\\dialogs\\invoicedetailsdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:dialogs\\invoicedetailsdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|c:\\users\\abdelrahman\\source\\repos\\clinicmanagementsystem\\dialogs\\patientdetailsdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:dialogs\\patientdetailsdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|c:\\users\\abdelrahman\\source\\repos\\clinicmanagementsystem\\dialogs\\searchpatientdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:dialogs\\searchpatientdialog.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|c:\\users\\abdelrahman\\source\\repos\\clinicmanagementsystem\\data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|c:\\users\\abdelrahman\\source\\repos\\clinicmanagementsystem\\pages\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:pages\\settingspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -195,10 +223,6 @@
       "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:dialogs\\patientdialog.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|c:\\users\\abdelrahman\\source\\repos\\clinicmanagementsystem\\data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|c:\\users\\abdelrahman\\source\\repos\\clinicmanagementsystem\\packages.config||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{6E9C29F9-A248-429B-9AD7-EA1BCBF7543E}|ClinicManagementSystem.csproj|solutionrelative:packages.config||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -222,7 +246,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -238,67 +262,79 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InvoiceDialog.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\InvoiceDialog.xaml.cs",
-              "RelativeDocumentMoniker": "Dialogs\\InvoiceDialog.xaml.cs",
-              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\InvoiceDialog.xaml.cs",
-              "RelativeToolTip": "Dialogs\\InvoiceDialog.xaml.cs",
-              "ViewState": "AgIAAMwAAAAAAAAAAAAAAOQAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-27T06:44:34.758Z",
+              "DocumentIndex": 0,
+              "Title": "AdvancedSearchDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\AdvancedSearchDialog.xaml",
+              "RelativeDocumentMoniker": "Dialogs\\AdvancedSearchDialog.xaml",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\AdvancedSearchDialog.xaml",
+              "RelativeToolTip": "Dialogs\\AdvancedSearchDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-31T16:28:07.888Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ReportsPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\ReportsPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\ReportsPage.xaml",
-              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\ReportsPage.xaml",
-              "RelativeToolTip": "Pages\\ReportsPage.xaml",
+              "DocumentIndex": 1,
+              "Title": "PrescriptionDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\PrescriptionDialog.xaml",
+              "RelativeDocumentMoniker": "Dialogs\\PrescriptionDialog.xaml",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\PrescriptionDialog.xaml",
+              "RelativeToolTip": "Dialogs\\PrescriptionDialog.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-26T19:07:54.484Z"
+              "WhenOpened": "2025-10-31T16:27:54.625Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SettingsPage.xaml",
-              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\SettingsPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\SettingsPage.xaml",
-              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\SettingsPage.xaml",
-              "RelativeToolTip": "Pages\\SettingsPage.xaml",
+              "DocumentIndex": 2,
+              "Title": "AppointmentDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\AppointmentDialog.xaml",
+              "RelativeDocumentMoniker": "Dialogs\\AppointmentDialog.xaml",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\AppointmentDialog.xaml",
+              "RelativeToolTip": "Dialogs\\AppointmentDialog.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-10-26T19:09:57.521Z",
+              "WhenOpened": "2025-10-31T16:27:42.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InvoiceDetailsDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\InvoiceDetailsDialog.xaml",
+              "RelativeDocumentMoniker": "Dialogs\\InvoiceDetailsDialog.xaml",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\InvoiceDetailsDialog.xaml",
+              "RelativeToolTip": "Dialogs\\InvoiceDetailsDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-31T16:27:31.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PatientDetailsDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\PatientDetailsDialog.xaml",
+              "RelativeDocumentMoniker": "Dialogs\\PatientDetailsDialog.xaml",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\PatientDetailsDialog.xaml",
+              "RelativeToolTip": "Dialogs\\PatientDetailsDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-31T16:27:13.601Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ExcelHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Helpers\\ExcelHelper.cs",
-              "RelativeDocumentMoniker": "Helpers\\ExcelHelper.cs",
-              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Helpers\\ExcelHelper.cs",
-              "RelativeToolTip": "Helpers\\ExcelHelper.cs",
-              "ViewState": "AgIAAA0CAAAAAAAAAAAAwBkCAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T18:17:03.194Z"
+              "Title": "SearchPatientDialog.xaml",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\SearchPatientDialog.xaml",
+              "RelativeDocumentMoniker": "Dialogs\\SearchPatientDialog.xaml",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\SearchPatientDialog.xaml",
+              "RelativeToolTip": "Dialogs\\SearchPatientDialog.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-31T16:26:55.2Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PDFHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Helpers\\PDFHelper.cs",
-              "RelativeDocumentMoniker": "Helpers\\PDFHelper.cs",
-              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Helpers\\PDFHelper.cs",
-              "RelativeToolTip": "Helpers\\PDFHelper.cs",
-              "ViewState": "AgIAAGcBAAAAAAAAAAAAAHIBAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T18:10:01.92Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "PatientRepository.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Repositories\\PatientRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\PatientRepository.cs",
@@ -310,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "ReportsPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\ReportsPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\ReportsPage.xaml.cs",
@@ -322,7 +358,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Data\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "Data\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Data\\DatabaseHelper.cs",
+              "RelativeToolTip": "Data\\DatabaseHelper.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAAANMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T17:52:28.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReportsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\ReportsPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\ReportsPage.xaml",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\ReportsPage.xaml",
+              "RelativeToolTip": "Pages\\ReportsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-26T19:07:54.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SettingsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\SettingsPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\SettingsPage.xaml",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\SettingsPage.xaml",
+              "RelativeToolTip": "Pages\\SettingsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-26T19:09:57.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ExcelHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Helpers\\ExcelHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\ExcelHelper.cs",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Helpers\\ExcelHelper.cs",
+              "RelativeToolTip": "Helpers\\ExcelHelper.cs",
+              "ViewState": "AgIAAA0CAAAAAAAAAAAAwBkCAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T18:17:03.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PDFHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Helpers\\PDFHelper.cs",
+              "RelativeDocumentMoniker": "Helpers\\PDFHelper.cs",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Helpers\\PDFHelper.cs",
+              "RelativeToolTip": "Helpers\\PDFHelper.cs",
+              "ViewState": "AgIAAGcBAAAAAAAAAAAAAHIBAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-26T18:10:01.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "InvoiceDialog.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\InvoiceDialog.xaml.cs",
+              "RelativeDocumentMoniker": "Dialogs\\InvoiceDialog.xaml.cs",
+              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\InvoiceDialog.xaml.cs",
+              "RelativeToolTip": "Dialogs\\InvoiceDialog.xaml.cs",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAAAOQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T06:44:34.758Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "PatientsPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\PatientsPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\PatientsPage.xaml.cs",
@@ -334,7 +441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "QueuePage.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\QueuePage.xaml",
               "RelativeDocumentMoniker": "Pages\\QueuePage.xaml",
@@ -345,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "PatientsPage.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\PatientsPage.xaml",
               "RelativeDocumentMoniker": "Pages\\PatientsPage.xaml",
@@ -356,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "InvoicesPage.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\InvoicesPage.xaml",
               "RelativeDocumentMoniker": "Pages\\InvoicesPage.xaml",
@@ -367,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "InventoryPage.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\InventoryPage.xaml",
               "RelativeDocumentMoniker": "Pages\\InventoryPage.xaml",
@@ -378,7 +485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "DashboardPage.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\DashboardPage.xaml",
               "RelativeDocumentMoniker": "Pages\\DashboardPage.xaml",
@@ -389,7 +496,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "AppointmentsPage.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\AppointmentsPage.xaml",
               "RelativeDocumentMoniker": "Pages\\AppointmentsPage.xaml",
@@ -400,7 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Main\\MainWindow.xaml",
               "RelativeDocumentMoniker": "Main\\MainWindow.xaml",
@@ -411,7 +518,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "LoginWindow .xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Main\\LoginWindow .xaml",
               "RelativeDocumentMoniker": "Main\\LoginWindow .xaml",
@@ -422,7 +529,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "VisitDialog.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\VisitDialog.xaml",
               "RelativeDocumentMoniker": "Dialogs\\VisitDialog.xaml",
@@ -433,7 +540,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
               "Title": "PaymentDialog.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\PaymentDialog.xaml",
               "RelativeDocumentMoniker": "Dialogs\\PaymentDialog.xaml",
@@ -444,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "PatientDialog.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\PatientDialog.xaml",
               "RelativeDocumentMoniker": "Dialogs\\PatientDialog.xaml",
@@ -455,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 26,
               "Title": "InvoiceDialog.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\InvoiceDialog.xaml",
               "RelativeDocumentMoniker": "Dialogs\\InvoiceDialog.xaml",
@@ -466,7 +573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 27,
               "Title": "Appointment.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\Appointment.cs",
               "RelativeDocumentMoniker": "Models\\Appointment.cs",
@@ -478,7 +585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 28,
               "Title": "VisitRepository.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Repositories\\VisitRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\VisitRepository.cs",
@@ -490,7 +597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 29,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\UserRepository.cs",
@@ -502,7 +609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 30,
               "Title": "InvoiceRepository.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Repositories\\InvoiceRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\InvoiceRepository.cs",
@@ -514,7 +621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 31,
               "Title": "InventoryRepository.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Repositories\\InventoryRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\InventoryRepository.cs",
@@ -526,7 +633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 32,
               "Title": "AppointmentRepository.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Repositories\\AppointmentRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\AppointmentRepository.cs",
@@ -538,7 +645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 33,
               "Title": "SettingsPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\SettingsPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\SettingsPage.xaml.cs",
@@ -550,7 +657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 34,
               "Title": "QueuePage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\QueuePage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\QueuePage.xaml.cs",
@@ -562,7 +669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 35,
               "Title": "InvoicesPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\InvoicesPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\InvoicesPage.xaml.cs",
@@ -574,7 +681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "InventoryPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\InventoryPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\InventoryPage.xaml.cs",
@@ -586,7 +693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 37,
               "Title": "DashboardPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\DashboardPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\DashboardPage.xaml.cs",
@@ -598,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "AppointmentsPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Pages\\AppointmentsPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\AppointmentsPage.xaml.cs",
@@ -610,7 +717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 39,
               "Title": "Visit.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\Visit.cs",
               "RelativeDocumentMoniker": "Models\\Visit.cs",
@@ -622,7 +729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 40,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -634,7 +741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 41,
               "Title": "Surgery.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\Surgery.cs",
               "RelativeDocumentMoniker": "Models\\Surgery.cs",
@@ -646,7 +753,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 42,
               "Title": "Prescription.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\Prescription.cs",
               "RelativeDocumentMoniker": "Models\\Prescription.cs",
@@ -658,7 +765,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 43,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\Payment.cs",
               "RelativeDocumentMoniker": "Models\\Payment.cs",
@@ -670,7 +777,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 44,
               "Title": "MedicalHistory.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\MedicalHistory.cs",
               "RelativeDocumentMoniker": "Models\\MedicalHistory.cs",
@@ -682,7 +789,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 45,
               "Title": "MedicalDocument.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\MedicalDocument.cs",
               "RelativeDocumentMoniker": "Models\\MedicalDocument.cs",
@@ -694,7 +801,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 46,
               "Title": "InvoiceItem.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\InvoiceItem.cs",
               "RelativeDocumentMoniker": "Models\\InvoiceItem.cs",
@@ -706,7 +813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 47,
               "Title": "Invoice.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\Invoice.cs",
               "RelativeDocumentMoniker": "Models\\Invoice.cs",
@@ -718,7 +825,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 48,
               "Title": "InventoryItem.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\InventoryItem.cs",
               "RelativeDocumentMoniker": "Models\\InventoryItem.cs",
@@ -730,7 +837,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 49,
               "Title": "BaseModel.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Models\\BaseModel.cs",
               "RelativeDocumentMoniker": "Models\\BaseModel.cs",
@@ -742,7 +849,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 50,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Main\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Main\\MainWindow.xaml.cs",
@@ -754,7 +861,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 51,
               "Title": "LoginWindow .xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Main\\LoginWindow .xaml.cs",
               "RelativeDocumentMoniker": "Main\\LoginWindow .xaml.cs",
@@ -766,7 +873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 52,
               "Title": "VisitDialog.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\VisitDialog.xaml.cs",
               "RelativeDocumentMoniker": "Dialogs\\VisitDialog.xaml.cs",
@@ -778,7 +885,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 53,
               "Title": "PaymentDialog.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\PaymentDialog.xaml.cs",
               "RelativeDocumentMoniker": "Dialogs\\PaymentDialog.xaml.cs",
@@ -790,7 +897,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 54,
               "Title": "PatientDialog.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Dialogs\\PatientDialog.xaml.cs",
               "RelativeDocumentMoniker": "Dialogs\\PatientDialog.xaml.cs",
@@ -802,19 +909,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "DatabaseHelper.cs",
-              "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Data\\DatabaseHelper.cs",
-              "RelativeDocumentMoniker": "Data\\DatabaseHelper.cs",
-              "ToolTip": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\Data\\DatabaseHelper.cs",
-              "RelativeToolTip": "Data\\DatabaseHelper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-26T17:52:28.428Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 55,
               "Title": "packages.config",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\packages.config",
               "RelativeDocumentMoniker": "packages.config",
@@ -826,7 +921,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 56,
               "Title": "packages.config",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\packages.config",
               "RelativeDocumentMoniker": "packages.config",
@@ -837,7 +932,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 57,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
@@ -849,7 +944,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 58,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\Abdelrahman\\source\\repos\\ClinicManagementSystem\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",

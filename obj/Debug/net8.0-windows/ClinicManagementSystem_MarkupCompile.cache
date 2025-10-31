@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\Abdelrahman\source\repos\ClinicManagementSystem\App.xaml
-141560074509
+20161547136
 
-38501161255
+44-1908434374
 2271615278536
-Dialogs\InvoiceDialog.xaml;Dialogs\PatientDialog.xaml;Dialogs\PaymentDialog.xaml;Dialogs\VisitDialog.xaml;Main\LoginWindow .xaml;Main\MainWindow.xaml;Pages\AppointmentsPage.xaml;Pages\DashboardPage.xaml;Pages\InventoryPage.xaml;Pages\InvoicesPage.xaml;Pages\PatientsPage.xaml;Pages\QueuePage.xaml;Pages\ReportsPage.xaml;Pages\SettingsPage.xaml;
+Dialogs\AdvancedSearchDialog.xaml;Dialogs\AppointmentDialog.xaml;Dialogs\InvoiceDetailsDialog.xaml;Dialogs\InvoiceDialog.xaml;Dialogs\PatientDetailsDialog.xaml;Dialogs\PatientDialog.xaml;Dialogs\PaymentDialog.xaml;Dialogs\PrescriptionDialog.xaml;Dialogs\SearchPatientDialog.xaml;Dialogs\VisitDialog.xaml;Main\LoginWindow .xaml;Main\MainWindow.xaml;Pages\AppointmentsPage.xaml;Pages\DashboardPage.xaml;Pages\InventoryPage.xaml;Pages\InvoicesPage.xaml;Pages\PatientsPage.xaml;Pages\QueuePage.xaml;Pages\ReportsPage.xaml;Pages\SettingsPage.xaml;
 
-False
+True
 

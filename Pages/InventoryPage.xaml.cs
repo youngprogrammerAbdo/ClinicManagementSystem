@@ -68,9 +68,19 @@ namespace ClinicManagementSystem.Pages
 
         private void ApplyFilters()
         {
+            if (_allItems == null || !_allItems.Any())
+                return;
+
+            if (dgInventory.SelectedItem == null)
+            {
+                dgInventory.ItemsSource = _allItems;
+                return;
+            }
+
             var searchTerm = txtSearch.Text.ToLower();
             var selectedCategory = (cmbCategoryFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
 
+            
             _filteredItems = _allItems.Where(i =>
             {
                 bool matchesSearch = string.IsNullOrEmpty(searchTerm) ||

@@ -20,6 +20,11 @@ namespace ClinicManagementSystem.Pages
             _appointmentRepo = new AppointmentRepository();
             _patientRepo = new PatientRepository();
             _selectedDate = DateTime.Today;
+            Loaded += AppointmentsPage_Loaded;
+        }
+
+        private void AppointmentsPage_Loaded(object sender, RoutedEventArgs e)
+        {
             LoadAppointments();
             LoadStatistics();
         }
@@ -28,20 +33,21 @@ namespace ClinicManagementSystem.Pages
         {
             try
             {
-                var appointments = _appointmentRepo.GetAppointmentsByDate(_selectedDate);
+                var appointments = _appointmentRepo.GetAppointmentsByDate(_selectedDate) ?? new List<Appointment>();
                 var displayList = new List<dynamic>();
 
                 foreach (var apt in appointments)
                 {
                     var patient = _patientRepo.GetPatientById(apt.PatientID);
+
                     displayList.Add(new
                     {
                         AppointmentID = apt.AppointmentID,
                         AppointmentTime = apt.AppointmentTime.ToString(@"hh\:mm"),
                         PatientName = patient?.FullName ?? "غير محدد",
                         PhoneNumber = patient?.PhoneNumber ?? "",
-                        AppointmentType = apt.AppointmentType,
-                        Status = apt.Status
+                        AppointmentType = apt.AppointmentType ?? "غير محدد",
+                        Status = apt.Status ?? "غير محدد"
                     });
                 }
 
@@ -51,7 +57,7 @@ namespace ClinicManagementSystem.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"خطأ: {ex.Message}", "خطأ", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show($"حدث خطأ أثناء تحميل المواعيد:\n{ex.Message}", "خطأ", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 

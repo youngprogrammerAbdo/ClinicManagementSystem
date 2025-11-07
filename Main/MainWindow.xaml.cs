@@ -1,11 +1,6 @@
-﻿// ====================================
-// MainWindow.xaml.cs - الكود الخلفي للنافذة الرئيسية
-// ====================================
-
-using ClinicManagementSystem.Models;
+﻿using ClinicManagementSystem.Models;
 using ClinicManagementSystem.Pages;
 using System;
-using System.Configuration;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -18,6 +13,13 @@ namespace ClinicManagementSystem
         public MainWindow()
         {
             InitializeComponent();
+
+            // عرض اسم المستخدم
+            if (CurrentUser != null)
+            {
+                txtUsername.Text = CurrentUser.FullName;
+            }
+
             LoadDashboard();
             UpdateDateTime();
 
@@ -40,9 +42,7 @@ namespace ClinicManagementSystem
             MainFrame.Navigate(new DashboardPage());
         }
 
-        // ====================================
         // Navigation Events
-        // ====================================
         private void Dashboard_Click(object sender, RoutedEventArgs e)
         {
             txtPageTitle.Text = "لوحة التحكم";
@@ -113,10 +113,21 @@ namespace ClinicManagementSystem
 
             if (result == MessageBoxResult.Yes)
             {
-                CurrentUser = null;
-                var loginWindow = new LoginWindow();
-                loginWindow.Show();
-                this.Close();
+                try
+                {
+                    // لا نمسح البيانات المحفوظة - نتركها كما هي
+                    // المستخدم اختار "تذكرني" من قبل
+                    CurrentUser = null;
+
+                    var loginWindow = new LoginWindow();
+                    loginWindow.Show();
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"خطأ: {ex.Message}", "خطأ",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }

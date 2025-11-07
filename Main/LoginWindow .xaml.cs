@@ -1,8 +1,4 @@
-﻿// ====================================
-// LoginWindow.xaml.cs
-// ====================================
-
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Input;
 using ClinicManagementSystem.Repositories;
@@ -18,10 +14,7 @@ namespace ClinicManagementSystem
         {
             InitializeComponent();
             _userRepo = new UserRepository();
-
-            // تحميل اسم المستخدم المحفوظ
             LoadSavedUsername();
-
             txtUsername.Focus();
         }
 
@@ -29,6 +22,7 @@ namespace ClinicManagementSystem
         {
             try
             {
+                Settings.Default.Reload();
                 string savedUsername = Settings.Default.SavedUsername;
                 bool rememberMe = Settings.Default.RememberMe;
 
@@ -39,7 +33,10 @@ namespace ClinicManagementSystem
                     txtPassword.Focus();
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"خطأ في تحميل اسم المستخدم: {ex.Message}");
+            }
         }
 
         private void Login_Click(object sender, RoutedEventArgs e)
@@ -57,10 +54,8 @@ namespace ClinicManagementSystem
 
         private void PerformLogin()
         {
-            // إخفاء رسالة الخطأ
             txtError.Visibility = Visibility.Collapsed;
 
-            // التحقق من إدخال البيانات
             if (string.IsNullOrWhiteSpace(txtUsername.Text))
             {
                 ShowError("الرجاء إدخال اسم المستخدم");
@@ -77,18 +72,14 @@ namespace ClinicManagementSystem
 
             try
             {
-                // تعطيل زر الدخول أثناء المعالجة
                 btnLogin.IsEnabled = false;
                 btnLogin.Content = "جاري التحقق...";
 
-                // محاولة تسجيل الدخول
                 var user = _userRepo.Login(txtUsername.Text, txtPassword.Password);
 
                 if (user != null)
                 {
-                    // نجح تسجيل الدخول
-
-                    // حفظ اسم المستخدم إذا كان الخيار مفعل
+                    // حفظ اسم المستخدم
                     if (chkRememberMe.IsChecked == true)
                     {
                         Settings.Default.SavedUsername = txtUsername.Text;
@@ -113,7 +104,6 @@ namespace ClinicManagementSystem
                 }
                 else
                 {
-                    // فشل تسجيل الدخول
                     ShowError("اسم المستخدم أو كلمة المرور غير صحيحة");
                     txtPassword.Clear();
                     txtPassword.Focus();
@@ -125,7 +115,6 @@ namespace ClinicManagementSystem
             }
             finally
             {
-                // إعادة تفعيل زر الدخول
                 btnLogin.IsEnabled = true;
                 btnLogin.Content = "تسجيل الدخول";
             }

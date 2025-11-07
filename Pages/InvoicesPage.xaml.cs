@@ -122,8 +122,19 @@ namespace ClinicManagementSystem.Pages
 
         private void ApplyFilters()
         {
-            var searchTerm = txtSearch.Text.ToLower();
+            if (_allInvoices == null || !_allInvoices.Any())
+            {
+                return;
+            }
             var selectedStatus = (cmbStatusFilter.SelectedItem as ComboBoxItem)?.Content.ToString();
+
+            if (string.IsNullOrEmpty(selectedStatus) || selectedStatus == "الكل")
+            {
+                dgInvoices.ItemsSource = _allInvoices;
+                return;
+            }
+
+            var searchTerm = txtSearch.Text.ToLower();
 
             _filteredInvoices = _allInvoices.Where(i =>
             {
